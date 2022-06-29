@@ -42,5 +42,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.mukeshsolanki:photofilter:1.0.2'
     implementation 'com.karumi:dexter:6.2.2'
+    implementation 'com.github.alvinhkh:TextDrawable:f9f516c43b'
 
 }
