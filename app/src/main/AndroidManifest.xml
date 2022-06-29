@@ -26,4 +26,15 @@
         </activity>
     </application>
 
+    <!--permissions to read contacts-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--permissions to write contacts-->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!--permissions to make a call-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!--permissions to send sms-->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--permissions to write sms-->
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+
 </manifest>
