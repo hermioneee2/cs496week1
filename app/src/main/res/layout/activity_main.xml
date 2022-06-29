@@ -27,6 +27,7 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Should android:id be in RelativeLayout too? -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
@@ -40,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".MainActivity">
 
         <!--Recycler view for displaying list of contacts-->
