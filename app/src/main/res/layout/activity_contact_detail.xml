@@ -49,9 +49,12 @@
                 android:id="@+id/idIVCall"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:padding="4dp"
-                android:src="@drawable/ic_account"
+                android:src="@drawable/ic_baseline_phone_24"
                 app:tint="@color/purple_700" />
 
             <!--text view for displaying user contact-->

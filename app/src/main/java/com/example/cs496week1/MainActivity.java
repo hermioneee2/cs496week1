@@ -194,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                         if (multiplePermissionsReport.areAllPermissionsGranted()) {
                             // do you work now
                             getContacts();
+                            // Todo: Remove this toast
                             Toast.makeText(MainActivity.this, "All the permissions are granted..", Toast.LENGTH_SHORT).show();
                         }
                         // check for permanent denial of any permission
