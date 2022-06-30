@@ -1,15 +1,9 @@
 package com.example.cs496week1.ui.main;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.cs496week1.R;
 
 import java.util.ArrayList;
 import java.util.List;
