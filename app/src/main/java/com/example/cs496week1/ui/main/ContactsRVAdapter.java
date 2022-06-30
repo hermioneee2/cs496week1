@@ -1,4 +1,4 @@
-package com.example.cs496week1;
+package com.example.cs496week1.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
+import com.example.cs496week1.ContactDetailActivity;
+import com.example.cs496week1.R;
 
 import java.util.ArrayList;
 

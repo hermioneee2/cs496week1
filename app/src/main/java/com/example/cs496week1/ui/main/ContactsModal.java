@@ -1,4 +1,4 @@
-package com.example.cs496week1;
+package com.example.cs496week1.ui.main;
 
 public class ContactsModal {
     // variables for our user name
