@@ -34,6 +34,8 @@ public class ContactDetailActivity extends AppCompatActivity {
         contactIV = findViewById(R.id.idIVContact);
         contactTV = findViewById(R.id.idTVPhone);
         nameTV.setText(contactName);
+        // TODO
+        // Add dashes later for phone number
         contactTV.setText(contactNumber);
         callIV = findViewById(R.id.idIVCall);
         messageIV = findViewById(R.id.idIVMessage);
