@@ -3,25 +3,15 @@ package com.example.cs496week1;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.example.cs496week1.databinding.ActivityMainBinding;
-import com.example.cs496week1.ui.main.SectionsPagerAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import com.example.cs496week1.ui.main.SectionsPagerAdapter;
 import com.example.cs496week1.databinding.ActivityMainBinding;
-
 import com.example.cs496week1.ui.main.Fragment_First;
 import com.example.cs496week1.ui.main.Fragment_Second;
 import com.example.cs496week1.ui.main.Fragment_Third;
+import com.example.cs496week1.ui.main.SectionsPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
