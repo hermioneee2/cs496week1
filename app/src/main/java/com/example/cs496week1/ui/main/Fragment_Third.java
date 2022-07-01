@@ -47,13 +47,13 @@ public class Fragment_Third extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
-        TextView tv= (TextView) view.findViewById(R.id.textView3);
-//        tv.setText("test"); //
+        TextView tv = (TextView) view.findViewById(R.id.textView3);
+//        tv.setText("test");
 
 
 
         // id that is currently displayed
-        int curDispId = 4;
+        int curDispId = 2;
 
         // People Image
         Resources res = getResources();
