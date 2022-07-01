@@ -38,24 +38,35 @@ public class Fragment_Third extends Fragment {
         TextView tv= (TextView) view.findViewById(R.id.textView3);
 //        tv.setText("test"); //
 
-        jsonParsing(getJsonString());
-        String test1 = peopleList.get(2).getName();
-        tv.setText(test1);
 
+
+        // id that is currently displayed
+        int curDispId = 4;
+
+        // People Image
         Resources res = getResources();
 
         // TODO: completed here, apply to tab 2 like this
-        // use string to easily find view by ID
-        String mViewName = "imageView3";
-        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
-        ImageView iv= (ImageView) view.findViewById(imageViewID);
+//        // use string to easily find view by ID
+//        String mViewName = "imageView3";
+//        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
+//        ImageView iv= (ImageView) view.findViewById(imageViewID);
+
+        // above three lines are equivalent to:
+        ImageView iv = (ImageView) view.findViewById(R.id.imageView3);
 
         // use string to easily call image from drawable
-        String mDrawableName = "photo1";
+//        String mDrawableName = "photo1";
+        String mDrawableName = "photo" + curDispId;
         int imageID = res.getIdentifier(mDrawableName , "drawable", getActivity().getPackageName());
         Drawable drawable = res.getDrawable(imageID);
 
         iv.setImageDrawable(drawable);
+
+        // People Info
+        jsonParsing(getJsonString());
+        String test1 = peopleList.get(curDispId-1).getName();
+        tv.setText(test1);
 
         return view;
     }
