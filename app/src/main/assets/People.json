@@ -26,6 +26,34 @@
     "university" : "성균관대",
     "st_number" : "20",
     "pic_src" : "pic_src"
+  },
+  {
+    "id" : 5,
+    "name" : "혜림이",
+    "university" : "카이스트",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 6,
+    "name" : "준현박",
+    "university" : "고려대",
+    "st_number" : "20",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 7,
+    "name" : "진규정",
+    "university" : "카이스트",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 8,
+    "name" : "다연우",
+    "university" : "성균관대",
+    "st_number" : "20",
+    "pic_src" : "pic_src"
   }
 ]
 }

@@ -10,7 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.example.cs496week1.R;
 
@@ -23,12 +26,21 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Fragment_Third extends Fragment {
-    ViewPager viewPager;
-    ArrayList<People> peopleList;
+    ArrayList<People> peopleArrayList;
+    private RecyclerView nameRV;
+    private RecyclerView univRV;
+    private RecyclerView sidRV;
+    private NameRVAdapter nameRVAdapter;
+    private UnivRVAdapter univRVAdapter;
+    private SidRVAdapter sidRVAdapter;
 
     public Fragment_Third() {
         super(R.layout.fragment_third);
+    }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -64,9 +76,36 @@ public class Fragment_Third extends Fragment {
         iv.setImageDrawable(drawable);
 
         // People Info
+        // Todo: should this be elsewhere?
         jsonParsing(getJsonString());
-        String test1 = peopleList.get(curDispId-1).getName();
+        String test1 = peopleArrayList.get(curDispId-1).getName();
         tv.setText(test1);
+
+        nameRV = view.findViewById(R.id.idRVNames);
+        univRV = view.findViewById(R.id.idRVUnivs);
+        sidRV = view.findViewById(R.id.idRVSids);
+
+        nameRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        univRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        sidRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+
+        nameRVAdapter = new NameRVAdapter(getActivity(), peopleArrayList);
+        univRVAdapter = new UnivRVAdapter(getActivity(), peopleArrayList);
+        sidRVAdapter = new SidRVAdapter(getActivity(), peopleArrayList);
+
+        nameRV.setAdapter(nameRVAdapter);
+        univRV.setAdapter(univRVAdapter);
+        sidRV.setAdapter(sidRVAdapter);
+
+
+        // Todo: snapping on boot?
+        SnapHelper nameHelper = new PagerSnapHelper();
+        SnapHelper univHelper = new PagerSnapHelper();
+        SnapHelper sidHelper = new PagerSnapHelper();
+
+        nameHelper.attachToRecyclerView(nameRV);
+        univHelper.attachToRecyclerView(univRV);
+        sidHelper.attachToRecyclerView(sidRV);
 
         return view;
     }
@@ -148,7 +187,7 @@ public class Fragment_Third extends Fragment {
             JSONObject jsonObject = new JSONObject(json);
 
             JSONArray peopleArray = jsonObject.getJSONArray("People");
-            peopleList = new ArrayList<People>();
+            peopleArrayList = new ArrayList<People>();
 
             for(int i=0; i<peopleArray.length(); i++)
             {
@@ -162,7 +201,7 @@ public class Fragment_Third extends Fragment {
                 person.setSt_number(peopleObject.getString("st_number"));
                 person.setPic_src(peopleObject.getString("pic_src"));
 
-                peopleList.add(person);
+                peopleArrayList.add(person);
             }
         }catch (JSONException e) {
             e.printStackTrace();
