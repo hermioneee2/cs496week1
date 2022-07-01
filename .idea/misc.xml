@@ -4,11 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_contact_detail.xml" value="0.161231884057971" />
-        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.107" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_create_new_contact.xml" value="0.1" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/fragment_first.xml" value="0.203125" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/fragment_third.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/layout/contacts_rv_item.xml" value="0.203125" />
-        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20364583333333333" />
       </map>
     </option>
   </component>

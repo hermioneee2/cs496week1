@@ -1,0 +1,31 @@
+{ "People" : [
+  {
+    "id" : 1,
+    "name" : "이혜림",
+    "university" : "카이스트",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 2,
+    "name" : "박준현",
+    "university" : "고려대",
+    "st_number" : "20",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 3,
+    "name" : "정진규",
+    "university" : "카이스트",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 4,
+    "name" : "우다연",
+    "university" : "성균관대",
+    "st_number" : "20",
+    "pic_src" : "pic_src"
+  }
+]
+}
