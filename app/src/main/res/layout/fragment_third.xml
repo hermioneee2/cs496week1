@@ -28,32 +28,22 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
-        <Space
-            android:id="@+id/f3space1"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_below="@id/idRVNames" />
-
         <!--Recycler view for displaying list of universities-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/idRVUnivs"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_below="@id/f3space1"
-            android:layout_centerHorizontal="true" />
-
-        <Space
-            android:id="@+id/f3space2"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_below="@id/idRVUnivs" />
+            android:layout_below="@id/idRVNames"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
 
         <!--Recycler view for displaying list of year of admissions (student_id)-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/idRVSids"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_below="@id/f3space2"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/idRVUnivs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
     </RelativeLayout>
 </RelativeLayout>
