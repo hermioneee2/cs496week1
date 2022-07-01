@@ -1,9 +1,12 @@
 package com.example.cs496week1.ui.main;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -39,7 +42,20 @@ public class Fragment_Third extends Fragment {
         String test1 = peopleList.get(2).getName();
         tv.setText(test1);
 
+        Resources res = getResources();
 
+        // TODO: completed here, apply to tab 2 like this
+        // use string to easily find view by ID
+        String mViewName = "imageView3";
+        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
+        ImageView iv= (ImageView) view.findViewById(imageViewID);
+
+        // use string to easily call image from drawable
+        String mDrawableName = "photo1";
+        int imageID = res.getIdentifier(mDrawableName , "drawable", getActivity().getPackageName());
+        Drawable drawable = res.getDrawable(imageID);
+
+        iv.setImageDrawable(drawable);
 
         return view;
     }
