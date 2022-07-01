@@ -33,7 +33,7 @@ public class Fragment_Third extends Fragment {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
         TextView tv= (TextView) view.findViewById(R.id.textView3);
-//        tv.setText("test");
+//        tv.setText("test"); //
 
         jsonParsing(getJsonString());
         String test1 = peopleList.get(2).getName();
