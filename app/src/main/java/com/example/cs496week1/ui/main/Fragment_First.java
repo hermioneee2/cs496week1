@@ -169,6 +169,7 @@ public class Fragment_First extends Fragment {
                         if (multiplePermissionsReport.areAllPermissionsGranted()) {
                             // do you work now
                             getContacts();
+                            // Todo: remove the following line
                             Toast.makeText(getActivity(), "All the permissions are granted..", Toast.LENGTH_SHORT).show();
                         }
                         // check for permanent denial of any permission
