@@ -15,7 +15,15 @@ public class ImageAdapter extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.photo1, R.drawable.photo2,
-            R.drawable.photo3, R.drawable.photo4
+            R.drawable.photo3, R.drawable.photo4,
+            R.drawable.photo5, R.drawable.photo6,
+            R.drawable.photo7, R.drawable.photo8,
+            R.drawable.photo9, R.drawable.photo10,
+            R.drawable.photo11, R.drawable.photo12,
+            R.drawable.photo13, R.drawable.photo14,
+            R.drawable.photo15, R.drawable.photo16,
+            R.drawable.photo17, R.drawable.photo18,
+            R.drawable.photo19, R.drawable.photo20
     };
 
     // Constructor
@@ -44,8 +52,8 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(mThumbIds[position]);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         // Todo: update this to take into account getResources().getDisplayMetrics()
-        // https://stackoverflow.com/questions/10329673/gridview-layoutparams-to-be-the-same-in-different-screen-sizes-is-it-possible
-        imageView.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.MATCH_PARENT, GridView.LayoutParams.MATCH_PARENT));
+        int widthPixels = mContext.getResources().getDisplayMetrics().widthPixels;
+        imageView.setLayoutParams(new GridView.LayoutParams(widthPixels / 3, widthPixels / 3));
         return imageView;
     }
 
