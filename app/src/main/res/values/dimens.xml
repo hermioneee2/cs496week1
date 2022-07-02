@@ -14,4 +14,7 @@
 
     <dimen name="elevation_normal">4dp</dimen>
     <dimen name="elevation_large">8dp</dimen>
+
+    <dimen name="custom_wheel_picker_item_height">44dp</dimen>
+
 </resources>

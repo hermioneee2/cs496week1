@@ -44,5 +44,6 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.2'
     implementation 'com.github.alvinhkh:TextDrawable:f9f516c43b'
     implementation 'com.github.flschweiger:SwipeStack:0.3.0'
+    implementation 'sh.tyy:wheelpicker:0.2.1'
 
 }
