@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.107" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/card.xml" value="0.2930253623188406" />
         <entry key="app/src/main/res/layout/contacts_rv_item.xml" value="0.203125" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20364583333333333" />

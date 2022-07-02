@@ -54,6 +54,7 @@ public class Fragment_Third extends Fragment {
     private ArrayList<CardItem> cardItems;
     private View btnCancel;
     private View btnLove;
+    // position of currently displayed item
     private int currentPosition;
 
     public Fragment_Third() {
@@ -69,34 +70,11 @@ public class Fragment_Third extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
-        // id that is currently displayed
-        int curDispId = 2;
 
-        //CARD DECK
-        cardStack = (SwipeStack) view.findViewById(R.id.container);
-        setCardStackAdapter();
-        currentPosition = 0;
-
-        cardStack.setListener(new SwipeStack.SwipeStackListener() {
-              @Override
-              public void onViewSwipedToLeft(int position) {
-                  currentPosition = position + 1;
-              }
-
-              @Override
-              public void onViewSwipedToRight(int position) {
-                  currentPosition = position + 1;
-              }
-
-              @Override
-              public void onStackEmpty() {
-
-              }
-        });
 
 
         // People Image
-        Resources res = getResources();
+//        Resources res = getResources();
 
 //        // TODO: completed here, apply to tab 2 like this
 ////        // use string to easily find view by ID
@@ -119,9 +97,27 @@ public class Fragment_Third extends Fragment {
         // Todo: should this be elsewhere?
         jsonParsing(getJsonString());
 
-//        TextView tv = (TextView) view.findViewById(R.id.textView3);
-//        String test1 = peopleArrayList.get(curDispId-1).getName();
-//        tv.setText(test1);
+        //CARD DECK
+        cardStack = (SwipeStack) view.findViewById(R.id.container);
+        setCardStackAdapter(view);
+        currentPosition = 0;
+
+        cardStack.setListener(new SwipeStack.SwipeStackListener() {
+            @Override
+            public void onViewSwipedToLeft(int position) {
+//                  currentPosition = position + 1;
+            }
+
+            @Override
+            public void onViewSwipedToRight(int position) {
+//                  currentPosition = position + 1;
+            }
+
+            @Override
+            public void onStackEmpty() {
+                // Todo: what should we do on stack empty?
+            }
+        });
 
         nameRV = view.findViewById(R.id.idRVNames);
         univRV = view.findViewById(R.id.idRVUnivs);
@@ -273,8 +269,12 @@ public class Fragment_Third extends Fragment {
                     if (checkCorrect()) {
                         // Todo: add functionality here
                         // This part handles the case of full match
-                        Toast myToast = Toast.makeText(getContext(), "Successful match", Toast.LENGTH_SHORT);
-                        myToast.show();
+                        currentPosition++;
+                        if (currentPosition % 2 == 0) {
+                            cardStack.swipeTopViewToRight();
+                        } else {
+                            cardStack.swipeTopViewToLeft();
+                        }
                     }
                 case RecyclerView.SCROLL_STATE_DRAGGING:
                 case RecyclerView.SCROLL_STATE_IDLE:
@@ -284,29 +284,32 @@ public class Fragment_Third extends Fragment {
     }
 
     public boolean checkCorrect() {
-        // Todo: change get(2) to real position for quiz question
         TextView nameSnapView = (TextView) nameHelper.findSnapView(nameRVLayoutManager);
         TextView univSnapView = (TextView) univHelper.findSnapView(univRVLayoutManager);
         TextView sidSnapView = (TextView) sidHelper.findSnapView(sidRVLayoutManager);
 
-        return (nameSnapView.getText().toString().equals(peopleArrayList.get(2).getName()) &
-                univSnapView.getText().toString().equals(peopleArrayList.get(2).getUniversity()) &
-                sidSnapView.getText().toString().equals(peopleArrayList.get(2).getSt_number()));
+        return (nameSnapView.getText().toString().equals(peopleArrayList.get(currentPosition).getName()) &
+                univSnapView.getText().toString().equals(peopleArrayList.get(currentPosition).getUniversity()) &
+                sidSnapView.getText().toString().equals(peopleArrayList.get(currentPosition).getSt_number()));
     }
 
     //CARD DECK
-    private void setCardStackAdapter() {
+    private void setCardStackAdapter(View view) {
         cardItems = new ArrayList<>();
 
-        cardItems.add(new CardItem(R.drawable.photo1));
-        cardItems.add(new CardItem(R.drawable.photo2));
-        cardItems.add(new CardItem(R.drawable.photo3));
-//        cardItems.add(new CardItem(R.drawable.f, "Do Ha", "Nghe An"));
-//        cardItems.add(new CardItem(R.drawable.g, "Dong Nhi", "Hue"));
-//        cardItems.add(new CardItem(R.drawable.e, "Le Quyen", "Sai Gon"));
-//        cardItems.add(new CardItem(R.drawable.c, "Phuong Linh", "Thanh Hoa"));
-//        cardItems.add(new CardItem(R.drawable.d, "Phuong Vy", "Hanoi"));
-//        cardItems.add(new CardItem(R.drawable.b, "Ha Ho", "Da Nang"));
+        Resources resources = getResources();
+
+        for (int i = 0; i < peopleArrayList.size(); i++) {
+//            ImageView imageView = (ImageView) view.findViewById(R.id.avatar);
+
+            String mDrawableName = "photo" + (i + 1);
+            int imageID = resources.getIdentifier(mDrawableName, "drawable", getActivity().getPackageName());
+//            Drawable drawable = resources.getDrawable(imageID);
+
+//            imageView.setImageDrawable(drawable);
+
+            cardItems.add(new CardItem(imageID));
+        }
 
         cardsAdapter = new CardsAdapter(getActivity(), cardItems);
         cardStack.setAdapter(cardsAdapter);
