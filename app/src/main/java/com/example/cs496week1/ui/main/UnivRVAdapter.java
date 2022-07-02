@@ -30,13 +30,13 @@ public class UnivRVAdapter extends RecyclerView.Adapter<UnivRVAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull UnivRVAdapter.ViewHolder holder, int position) {
-        Fragment_Third.People people = peopleArrayList.get(position);
+        Fragment_Third.People people = peopleArrayList.get(position % peopleArrayList.size());
         holder.univTV.setText(people.getUniversity());
     }
 
     @Override
     public int getItemCount() {
-        return peopleArrayList.size();
+        return Integer.MAX_VALUE;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

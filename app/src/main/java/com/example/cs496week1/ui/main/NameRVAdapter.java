@@ -30,13 +30,13 @@ public class NameRVAdapter extends RecyclerView.Adapter<NameRVAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NameRVAdapter.ViewHolder holder, int position) {
-        Fragment_Third.People people = peopleArrayList.get(position);
+        Fragment_Third.People people = peopleArrayList.get(position % peopleArrayList.size());
         holder.nameTV.setText(people.getName());
     }
 
     @Override
     public int getItemCount() {
-        return peopleArrayList.size();
+        return Integer.MAX_VALUE;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

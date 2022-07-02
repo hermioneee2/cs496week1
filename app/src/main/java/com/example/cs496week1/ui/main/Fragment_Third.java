@@ -116,6 +116,10 @@ public class Fragment_Third extends Fragment {
         univRV.addOnScrollListener(new RVScrollListener());
         sidRV.addOnScrollListener(new RVScrollListener());
 
+        nameRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+        univRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+        sidRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+
         return view;
     }
 
@@ -238,14 +242,13 @@ public class Fragment_Third extends Fragment {
     }
 
     public boolean checkCorrect() {
-        // Todo: the type casting aborts app (presumably due to error)
+        // Todo: change get(2) to real position for quiz question
         TextView nameSnapView = (TextView) nameHelper.findSnapView(nameRVLayoutManager);
         TextView univSnapView = (TextView) univHelper.findSnapView(univRVLayoutManager);
         TextView sidSnapView = (TextView) sidHelper.findSnapView(sidRVLayoutManager);
 
-        return (nameSnapView.getText().toString() == peopleArrayList.get(2).getName() &
-                univSnapView.getText().toString() == peopleArrayList.get(2).getUniversity() &
-                sidSnapView.getText().toString() == peopleArrayList.get(2).getSt_number());
-//        return true;
+        return (nameSnapView.getText().toString().equals(peopleArrayList.get(2).getName()) &
+                univSnapView.getText().toString().equals(peopleArrayList.get(2).getUniversity()) &
+                sidSnapView.getText().toString().equals(peopleArrayList.get(2).getSt_number()));
     }
 }
