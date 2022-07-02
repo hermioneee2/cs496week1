@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +23,7 @@ import com.example.cs496week1.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +39,14 @@ public class Fragment_Third extends Fragment {
     private NameRVAdapter nameRVAdapter;
     private UnivRVAdapter univRVAdapter;
     private SidRVAdapter sidRVAdapter;
+
+    //Slider
+    private SnapHelper nameHelper;
+    private SnapHelper univHelper;
+    private SnapHelper sidHelper;
+    private LinearLayoutManager nameRVLayoutManager;
+    private LinearLayoutManager univRVLayoutManager;
+    private LinearLayoutManager sidRVLayoutManager;
 
     //CARD DECK
     private SwipeStack cardStack;
@@ -117,9 +127,13 @@ public class Fragment_Third extends Fragment {
         univRV = view.findViewById(R.id.idRVUnivs);
         sidRV = view.findViewById(R.id.idRVSids);
 
-        nameRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        univRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        sidRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        nameRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        univRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        sidRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+
+        nameRV.setLayoutManager(nameRVLayoutManager);
+        univRV.setLayoutManager(univRVLayoutManager);
+        sidRV.setLayoutManager(sidRVLayoutManager);
 
         nameRVAdapter = new NameRVAdapter(getActivity(), peopleArrayList);
         univRVAdapter = new UnivRVAdapter(getActivity(), peopleArrayList);
@@ -131,13 +145,21 @@ public class Fragment_Third extends Fragment {
 
 
         // Todo: snapping on boot?
-        SnapHelper nameHelper = new PagerSnapHelper();
-        SnapHelper univHelper = new PagerSnapHelper();
-        SnapHelper sidHelper = new PagerSnapHelper();
+        nameHelper = new PagerSnapHelper();
+        univHelper = new PagerSnapHelper();
+        sidHelper = new PagerSnapHelper();
 
         nameHelper.attachToRecyclerView(nameRV);
         univHelper.attachToRecyclerView(univRV);
         sidHelper.attachToRecyclerView(sidRV);
+
+        nameRV.addOnScrollListener(new RVScrollListener());
+        univRV.addOnScrollListener(new RVScrollListener());
+        sidRV.addOnScrollListener(new RVScrollListener());
+
+        nameRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+        univRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+        sidRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
 
         return view;
     }
@@ -240,6 +262,37 @@ public class Fragment_Third extends Fragment {
         }
     }
 
+    //SLIDER
+    public class RVScrollListener extends RecyclerView.OnScrollListener {
+        public RVScrollListener() {
+        }
+
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            switch (newState) {
+                case RecyclerView.SCROLL_STATE_SETTLING:
+                    if (checkCorrect()) {
+                        // Todo: add functionality here
+                        // This part handles the case of full match
+                        Toast myToast = Toast.makeText(getContext(), "Successful match", Toast.LENGTH_SHORT);
+                        myToast.show();
+                    }
+                case RecyclerView.SCROLL_STATE_DRAGGING:
+                case RecyclerView.SCROLL_STATE_IDLE:
+                    break;
+            }
+        }
+    }
+
+    public boolean checkCorrect() {
+        // Todo: change get(2) to real position for quiz question
+        TextView nameSnapView = (TextView) nameHelper.findSnapView(nameRVLayoutManager);
+        TextView univSnapView = (TextView) univHelper.findSnapView(univRVLayoutManager);
+        TextView sidSnapView = (TextView) sidHelper.findSnapView(sidRVLayoutManager);
+
+        return (nameSnapView.getText().toString().equals(peopleArrayList.get(2).getName()) &
+                univSnapView.getText().toString().equals(peopleArrayList.get(2).getUniversity()) &
+                sidSnapView.getText().toString().equals(peopleArrayList.get(2).getSt_number()));
+    }
 
     //CARD DECK
     private void setCardStackAdapter() {

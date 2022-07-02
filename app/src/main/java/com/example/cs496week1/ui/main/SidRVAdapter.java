@@ -30,13 +30,13 @@ public class SidRVAdapter extends RecyclerView.Adapter<SidRVAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull SidRVAdapter.ViewHolder holder, int position) {
-        Fragment_Third.People people = peopleArrayList.get(position);
+        Fragment_Third.People people = peopleArrayList.get(position % peopleArrayList.size());
         holder.sidTV.setText(people.getSt_number());
     }
 
     @Override
     public int getItemCount() {
-        return peopleArrayList.size();
+        return Integer.MAX_VALUE;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
