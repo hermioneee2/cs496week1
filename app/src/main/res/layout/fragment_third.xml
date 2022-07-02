@@ -8,38 +8,46 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+
     <RelativeLayout
         android:id="@+id/fragmentThirdTop"
         android:layout_width="match_parent"
         android:layout_height="400dp">
 
+        <link.fls.swipestack.SwipeStack
+            android:id="@+id/container"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/padding_swipestack"
+            app:stack_rotation="0"
+            app:stack_size="3" />
+
+<!--        <link.fls.swipestack.SwipeStack-->
+<!--            android:id="@+id/container"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:padding="@dimen/padding_swipestack"-->
+<!--            app:stack_rotation="0"-->
+<!--            app:stack_size="3" />-->
+
         <!--??? view for displaying images-->
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageView3"-->
-<!--            android:layout_width="400dp"-->
-<!--            android:layout_height="200dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/imageView3" />
 
 <!--        <TextView-->
 <!--            android:id="@+id/textView3"-->
 <!--            android:layout_width="100dp"-->
 <!--            android:layout_height="50dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/imageView3" />-->
+<!--            android:layout_below="@id/imageView3" />-->
 
     </RelativeLayout>
 

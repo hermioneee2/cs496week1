@@ -4,6 +4,8 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -25,6 +27,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import link.fls.swipestack.SwipeStack;
+
 public class Fragment_Third extends Fragment {
     ArrayList<People> peopleArrayList;
     private RecyclerView nameRV;
@@ -33,6 +37,14 @@ public class Fragment_Third extends Fragment {
     private NameRVAdapter nameRVAdapter;
     private UnivRVAdapter univRVAdapter;
     private SidRVAdapter sidRVAdapter;
+
+    //CARD DECK
+    private SwipeStack cardStack;
+    private CardsAdapter cardsAdapter;
+    private ArrayList<CardItem> cardItems;
+    private View btnCancel;
+    private View btnLove;
+    private int currentPosition;
 
     public Fragment_Third() {
         super(R.layout.fragment_third);
@@ -47,39 +59,59 @@ public class Fragment_Third extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
-        TextView tv = (TextView) view.findViewById(R.id.textView3);
-//        tv.setText("test");
-
-
-
         // id that is currently displayed
         int curDispId = 2;
+
+        //CARD DECK
+        cardStack = (SwipeStack) view.findViewById(R.id.container);
+        setCardStackAdapter();
+        currentPosition = 0;
+
+        cardStack.setListener(new SwipeStack.SwipeStackListener() {
+              @Override
+              public void onViewSwipedToLeft(int position) {
+                  currentPosition = position + 1;
+              }
+
+              @Override
+              public void onViewSwipedToRight(int position) {
+                  currentPosition = position + 1;
+              }
+
+              @Override
+              public void onStackEmpty() {
+
+              }
+        });
+
 
         // People Image
         Resources res = getResources();
 
-        // TODO: completed here, apply to tab 2 like this
-//        // use string to easily find view by ID
-//        String mViewName = "imageView3";
-//        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
-//        ImageView iv= (ImageView) view.findViewById(imageViewID);
-
-        // above three lines are equivalent to:
-        ImageView iv = (ImageView) view.findViewById(R.id.imageView3);
-
-        // use string to easily call image from drawable
-//        String mDrawableName = "photo1";
-        String mDrawableName = "photo" + curDispId;
-        int imageID = res.getIdentifier(mDrawableName , "drawable", getActivity().getPackageName());
-        Drawable drawable = res.getDrawable(imageID);
-
-        iv.setImageDrawable(drawable);
+//        // TODO: completed here, apply to tab 2 like this
+////        // use string to easily find view by ID
+////        String mViewName = "imageView3";
+////        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
+////        ImageView iv= (ImageView) view.findViewById(imageViewID);
+//
+//        // above three lines are equivalent to:
+//        ImageView iv = (ImageView) view.findViewById(R.id.imageView3);
+//
+//        // use string to easily call image from drawable
+////        String mDrawableName = "photo1";
+//        String mDrawableName = "photo" + curDispId;
+//        int imageID = res.getIdentifier(mDrawableName , "drawable", getActivity().getPackageName());
+//        Drawable drawable = res.getDrawable(imageID);
+//
+//        iv.setImageDrawable(drawable);
 
         // People Info
         // Todo: should this be elsewhere?
         jsonParsing(getJsonString());
-        String test1 = peopleArrayList.get(curDispId-1).getName();
-        tv.setText(test1);
+
+//        TextView tv = (TextView) view.findViewById(R.id.textView3);
+//        String test1 = peopleArrayList.get(curDispId-1).getName();
+//        tv.setText(test1);
 
         nameRV = view.findViewById(R.id.idRVNames);
         univRV = view.findViewById(R.id.idRVUnivs);
@@ -207,6 +239,39 @@ public class Fragment_Third extends Fragment {
             e.printStackTrace();
         }
     }
+
+
+    //CARD DECK
+    private void setCardStackAdapter() {
+        cardItems = new ArrayList<>();
+
+        cardItems.add(new CardItem(R.drawable.photo1));
+        cardItems.add(new CardItem(R.drawable.photo2));
+        cardItems.add(new CardItem(R.drawable.photo3));
+//        cardItems.add(new CardItem(R.drawable.f, "Do Ha", "Nghe An"));
+//        cardItems.add(new CardItem(R.drawable.g, "Dong Nhi", "Hue"));
+//        cardItems.add(new CardItem(R.drawable.e, "Le Quyen", "Sai Gon"));
+//        cardItems.add(new CardItem(R.drawable.c, "Phuong Linh", "Thanh Hoa"));
+//        cardItems.add(new CardItem(R.drawable.d, "Phuong Vy", "Hanoi"));
+//        cardItems.add(new CardItem(R.drawable.b, "Ha Ho", "Da Nang"));
+
+        cardsAdapter = new CardsAdapter(getActivity(), cardItems);
+        cardStack.setAdapter(cardsAdapter);
+    }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if (item.getItemId() == R.id.reset) {
+//            cardStack.resetStack();
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
 
