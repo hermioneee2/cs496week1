@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 public class UnivRVAdapter extends RecyclerView.Adapter<UnivRVAdapter.ViewHolder> {
     private LayoutInflater mInflater;
-    private ArrayList<Fragment_Third.People> peopleArrayList;
+    private ArrayList<String> univList;
 
-    UnivRVAdapter(Context context, ArrayList<Fragment_Third.People> peopleArrayList) {
+    UnivRVAdapter(Context context, ArrayList<String> univList) {
         this.mInflater = LayoutInflater.from(context);
-        this.peopleArrayList = peopleArrayList;
+        this.univList = univList;
     }
 
     @NonNull
@@ -30,8 +30,8 @@ public class UnivRVAdapter extends RecyclerView.Adapter<UnivRVAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull UnivRVAdapter.ViewHolder holder, int position) {
-        Fragment_Third.People people = peopleArrayList.get(position % peopleArrayList.size());
-        holder.univTV.setText(people.getUniversity());
+        String univ = univList.get(position % univList.size());
+        holder.univTV.setText(univ);
     }
 
     @Override

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_contact_detail.xml" value="0.161231884057971" />
+        <entry key="app/src/main/res/drawable/gradient.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.107" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
@@ -11,7 +12,7 @@
         <entry key="app/src/main/res/layout/contacts_rv_item.xml" value="0.203125" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20364583333333333" />
-        <entry key="app/src/main/res/layout/fragment_third.xml" value="0.2586050724637681" />
+        <entry key="app/src/main/res/layout/fragment_third.xml" value="0.1" />
         <entry key="app/src/main/res/layout/names_rv_item.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/sids_rv_item.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/univs_rv_item.xml" value="0.21822916666666667" />

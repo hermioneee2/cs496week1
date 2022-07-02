@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 public class SidRVAdapter extends RecyclerView.Adapter<SidRVAdapter.ViewHolder> {
     private LayoutInflater mInflater;
-    private ArrayList<Fragment_Third.People> peopleArrayList;
+    private ArrayList<String> sidList;
 
-    SidRVAdapter(Context context, ArrayList<Fragment_Third.People> peopleArrayList) {
+    SidRVAdapter(Context context, ArrayList<String> sidList) {
         this.mInflater = LayoutInflater.from(context);
-        this.peopleArrayList = peopleArrayList;
+        this.sidList = sidList;
     }
 
     @NonNull
@@ -30,8 +30,8 @@ public class SidRVAdapter extends RecyclerView.Adapter<SidRVAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull SidRVAdapter.ViewHolder holder, int position) {
-        Fragment_Third.People people = peopleArrayList.get(position % peopleArrayList.size());
-        holder.sidTV.setText(people.getSt_number());
+        String sid = sidList.get(position % sidList.size());
+        holder.sidTV.setText(sid);
     }
 
     @Override

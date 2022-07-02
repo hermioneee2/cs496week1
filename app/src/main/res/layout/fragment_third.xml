@@ -52,7 +52,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fragmentThirdTop">
+        android:layout_below="@id/fragmentThirdTop" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient"
+            android:elevation="2dp" />
 
         <!--Recycler view for displaying list of names-->
         <androidx.recyclerview.widget.RecyclerView
