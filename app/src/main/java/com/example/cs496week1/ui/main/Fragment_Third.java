@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import com.example.cs496week1.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,6 +35,12 @@ public class Fragment_Third extends Fragment {
     private NameRVAdapter nameRVAdapter;
     private UnivRVAdapter univRVAdapter;
     private SidRVAdapter sidRVAdapter;
+    private SnapHelper nameHelper;
+    private SnapHelper univHelper;
+    private SnapHelper sidHelper;
+    private LinearLayoutManager nameRVLayoutManager;
+    private LinearLayoutManager univRVLayoutManager;
+    private LinearLayoutManager sidRVLayoutManager;
 
     public Fragment_Third() {
         super(R.layout.fragment_third);
@@ -47,11 +55,6 @@ public class Fragment_Third extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
-        TextView tv= (TextView) view.findViewById(R.id.textView3);
-//        tv.setText("test"); //
-
-
-
         // id that is currently displayed
         int curDispId = 4;
 
@@ -61,8 +64,8 @@ public class Fragment_Third extends Fragment {
         // TODO: completed here, apply to tab 2 like this
 //        // use string to easily find view by ID
 //        String mViewName = "imageView3";
-//        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
-//        ImageView iv= (ImageView) view.findViewById(imageViewID);
+//        int imageViewID = res.getIdentifier(mViewName, "id", getActivity().getPackageName());
+//        ImageView iv = (ImageView) view.findViewById(imageViewID);
 
         // above three lines are equivalent to:
         ImageView iv = (ImageView) view.findViewById(R.id.imageView3);
@@ -78,16 +81,18 @@ public class Fragment_Third extends Fragment {
         // People Info
         // Todo: should this be elsewhere?
         jsonParsing(getJsonString());
-        String test1 = peopleArrayList.get(curDispId-1).getName();
-        tv.setText(test1);
 
         nameRV = view.findViewById(R.id.idRVNames);
         univRV = view.findViewById(R.id.idRVUnivs);
         sidRV = view.findViewById(R.id.idRVSids);
 
-        nameRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        univRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        sidRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        nameRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        univRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        sidRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+
+        nameRV.setLayoutManager(nameRVLayoutManager);
+        univRV.setLayoutManager(univRVLayoutManager);
+        sidRV.setLayoutManager(sidRVLayoutManager);
 
         nameRVAdapter = new NameRVAdapter(getActivity(), peopleArrayList);
         univRVAdapter = new UnivRVAdapter(getActivity(), peopleArrayList);
@@ -99,13 +104,17 @@ public class Fragment_Third extends Fragment {
 
 
         // Todo: snapping on boot?
-        SnapHelper nameHelper = new PagerSnapHelper();
-        SnapHelper univHelper = new PagerSnapHelper();
-        SnapHelper sidHelper = new PagerSnapHelper();
+        nameHelper = new PagerSnapHelper();
+        univHelper = new PagerSnapHelper();
+        sidHelper = new PagerSnapHelper();
 
         nameHelper.attachToRecyclerView(nameRV);
         univHelper.attachToRecyclerView(univRV);
         sidHelper.attachToRecyclerView(sidRV);
+
+        nameRV.addOnScrollListener(new RVScrollListener());
+        univRV.addOnScrollListener(new RVScrollListener());
+        sidRV.addOnScrollListener(new RVScrollListener());
 
         return view;
     }
@@ -208,6 +217,35 @@ public class Fragment_Third extends Fragment {
         }
     }
 
+    public class RVScrollListener extends RecyclerView.OnScrollListener {
+        public RVScrollListener() {
+        }
 
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            switch (newState) {
+                case RecyclerView.SCROLL_STATE_SETTLING:
+                    if (checkCorrect()) {
+                        // Todo: add functionality here
+                        // This part handles the case of full match
+                        Toast myToast = Toast.makeText(getContext(), "Successful match", Toast.LENGTH_SHORT);
+                        myToast.show();
+                    }
+                case RecyclerView.SCROLL_STATE_DRAGGING:
+                case RecyclerView.SCROLL_STATE_IDLE:
+                    break;
+            }
+        }
+    }
 
+    public boolean checkCorrect() {
+        // Todo: the type casting aborts app (presumably due to error)
+        TextView nameSnapView = (TextView) nameHelper.findSnapView(nameRVLayoutManager);
+        TextView univSnapView = (TextView) univHelper.findSnapView(univRVLayoutManager);
+        TextView sidSnapView = (TextView) sidHelper.findSnapView(sidRVLayoutManager);
+
+        return (nameSnapView.getText().toString() == peopleArrayList.get(2).getName() &
+                univSnapView.getText().toString() == peopleArrayList.get(2).getUniversity() &
+                sidSnapView.getText().toString() == peopleArrayList.get(2).getSt_number());
+//        return true;
+    }
 }
