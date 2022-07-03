@@ -31,14 +31,16 @@ import link.fls.swipestack.SwipeStack;
 public class Fragment_Third extends Fragment {
     ArrayList<People> peopleArrayList;
     ArrayList<People> selectedArrayList;
+    // position of currently displayed item
+    private int currentPosition;
+
+    //Slider
     private RecyclerView nameRV;
     private RecyclerView univRV;
     private RecyclerView sidRV;
     private NameRVAdapter nameRVAdapter;
     private UnivRVAdapter univRVAdapter;
     private SidRVAdapter sidRVAdapter;
-
-    //Slider
     private SnapHelper nameHelper;
     private SnapHelper univHelper;
     private SnapHelper sidHelper;
@@ -52,8 +54,6 @@ public class Fragment_Third extends Fragment {
     private ArrayList<CardItem> cardItems;
     private View btnCancel;
     private View btnLove;
-    // position of currently displayed item
-    private int currentPosition;
 
     public Fragment_Third() {
         super(R.layout.fragment_third);
@@ -91,7 +91,8 @@ public class Fragment_Third extends Fragment {
         // Todo: should this be elsewhere?
         jsonParsing(getJsonString());
 
-        ArrayList<Integer> idList = new ArrayList<>(Arrays.asList(1, 2, 4));
+        ArrayList<Integer> idList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                11, 12, 13, 14, 15, 16, 17, 18, 19, 20));
 
         // IMPORTANT NOTE: both idList and peopleArrayList should be in increasing order of id
         //                 in order for this to properly function

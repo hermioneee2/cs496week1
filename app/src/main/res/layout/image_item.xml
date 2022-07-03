@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.wajahatkarim3.easyflipview.EasyFlipView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    app:flipOnTouch="true"
+    app:flipEnabled="true"
+    app:flipDuration="400"
+    app:flipType="vertical"
+    app:flipFrom="front"
+    app:autoFlipBack="true"
+    app:autoFlipBackTime="2000"
+    >
+
+    <!-- Back Layout Goes Here -->
+    <RelativeLayout
+        android:id="@+id/imageRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/imageName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/imageUnivSid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageName"
+            android:text="Univ Sid"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            />
+
+    </RelativeLayout>
+
+    <!-- Front Layout Goes Here -->
+    <ImageView
+        android:id="@+id/imageFront"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>

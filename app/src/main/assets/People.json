@@ -1,16 +1,16 @@
 { "People" : [
   {
     "id" : 1,
-    "name" : "이혜림",
-    "university" : "카이스트",
-    "st_number" : "18",
+    "name" : "박준현",
+    "university" : "고려대",
+    "st_number" : "20",
     "pic_src" : "pic_src"
   },
   {
     "id" : 2,
-    "name" : "박준현",
-    "university" : "고려대",
-    "st_number" : "20",
+    "name" : "이혜림",
+    "university" : "카이스트",
+    "st_number" : "18",
     "pic_src" : "pic_src"
   },
   {
@@ -29,30 +29,114 @@
   },
   {
     "id" : 5,
-    "name" : "혜림이",
-    "university" : "카이스트",
-    "st_number" : "18",
+    "name" : "박정은",
+    "university" : "포스텍",
+    "st_number" : "20",
     "pic_src" : "pic_src"
   },
   {
     "id" : 6,
-    "name" : "준현박",
-    "university" : "고려대",
-    "st_number" : "20",
-    "pic_src" : "pic_src"
-  },
-  {
-    "id" : 7,
-    "name" : "진규정",
+    "name" : "홍성준",
     "university" : "카이스트",
     "st_number" : "18",
     "pic_src" : "pic_src"
   },
   {
+    "id" : 7,
+    "name" : "정성재",
+    "university" : "카이스트",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
     "id" : 8,
-    "name" : "다연우",
-    "university" : "성균관대",
+    "name" : "윤태영",
+    "university" : "한양대",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 9,
+    "name" : "한관희",
+    "university" : "한양대",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 10,
+    "name" : "신의진",
+    "university" : "카이스트",
     "st_number" : "20",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 11,
+    "name" : "박수현",
+    "university" : "카이스트",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 12,
+    "name" : "현재오",
+    "university" : "지스트",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 13,
+    "name" : "이성진",
+    "university" : "고려대",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 14,
+    "name" : "김주연",
+    "university" : "카이스트",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 15,
+    "name" : "이준영",
+    "university" : "카이스트",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 16,
+    "name" : "최숙",
+    "university" : "숙명여대",
+    "st_number" : "18",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 17,
+    "name" : "손유진",
+    "university" : "숙명여대",
+    "st_number" : "19",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 18,
+    "name" : "정영훈",
+    "university" : "카이스트",
+    "st_number" : "20",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 19,
+    "name" : "김세훈",
+    "university" : "??",
+    "st_number" : "??",
+    "pic_src" : "pic_src"
+  },
+  {
+    "id" : 20,
+    "name" : "차상근",
+    "university" : "한양대",
+    "st_number" : "18",
     "pic_src" : "pic_src"
   }
 ]
