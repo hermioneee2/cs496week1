@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs496week1.Commons;
 import com.example.cs496week1.R;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
 
@@ -82,8 +83,9 @@ public class ImageAdapter extends BaseAdapter {
         textUnivSidView = itemView.findViewById(R.id.imageUnivSid);
 
         imageView.setImageResource(mThumbIds[position]);
-        textNameView.setText("이성진");
-        textUnivSidView.setText("카이스트 18");
+        textNameView.setText(Commons.peopleArrayList.get(position).getName());
+        textUnivSidView.setText(Commons.peopleArrayList.get(position).getUniversity() + " " +
+                Commons.peopleArrayList.get(position).getSt_number());
 
         int widthPixels = mContext.getResources().getDisplayMetrics().widthPixels;
         itemView.setLayoutParams(new GridView.LayoutParams(widthPixels / 3, widthPixels / 3));
