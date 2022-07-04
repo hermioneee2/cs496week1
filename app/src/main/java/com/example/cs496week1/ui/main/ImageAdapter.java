@@ -1,6 +1,8 @@
 package com.example.cs496week1.ui.main;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,52 +24,27 @@ public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater layoutInflater;
 
-    // Keep all Images in array
-    public Integer[] mThumbIds = {
-            R.drawable.photo1, R.drawable.photo2,
-            R.drawable.photo3, R.drawable.photo4,
-            R.drawable.photo5, R.drawable.photo6,
-            R.drawable.photo7, R.drawable.photo8,
-            R.drawable.photo9, R.drawable.photo10,
-            R.drawable.photo11, R.drawable.photo12,
-            R.drawable.photo13, R.drawable.photo14,
-            R.drawable.photo15, R.drawable.photo16,
-            R.drawable.photo17, R.drawable.photo18,
-            R.drawable.photo19, R.drawable.photo20
-    };
-
     // Constructor
     public ImageAdapter(Context context){
         mContext = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    // Todo: are the following three properly defined?
     @Override
     public int getCount() {
-        return mThumbIds.length;
+        return Commons.peopleArrayList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mThumbIds[position];
+        return Commons.peopleArrayList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
-
-//
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//        ImageView imageView = new ImageView(mContext);
-//        imageView.setImageResource(mThumbIds[position]);
-//        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//        // Todo: update this to take into account getResources().getDisplayMetrics()
-//        int widthPixels = mContext.getResources().getDisplayMetrics().widthPixels;
-//        imageView.setLayoutParams(new GridView.LayoutParams(widthPixels / 3, widthPixels / 3));
-//        return imageView;
-//    }
 
     @Override
     public View getView(int position, View itemView, ViewGroup parent) {
@@ -82,7 +59,12 @@ public class ImageAdapter extends BaseAdapter {
         textNameView = itemView.findViewById(R.id.imageName);
         textUnivSidView = itemView.findViewById(R.id.imageUnivSid);
 
-        imageView.setImageResource(mThumbIds[position]);
+        Resources resources = mContext.getResources();
+        String mDrawableName = "photo" + (position + 1);
+        int imageID = resources.getIdentifier(mDrawableName , "drawable", mContext.getPackageName());
+        Drawable drawable = resources.getDrawable(imageID);
+
+        imageView.setImageDrawable(drawable);
         textNameView.setText(Commons.peopleArrayList.get(position).getName());
         textUnivSidView.setText(Commons.peopleArrayList.get(position).getUniversity() + " " +
                 Commons.peopleArrayList.get(position).getSt_number());
