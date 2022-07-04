@@ -35,7 +35,7 @@ public class WheelView extends FrameLayout {
     /**
      * 中心item颜色
      */
-    private int textColorCenter = Color.RED;
+    private int textColorCenter = getResources().getColor(R.color.purple_500);
     /**
      * 分割线颜色
      */
