@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
     //added for easier tab change
     public void setupViewPager(ViewPager viewPager) {
-        sectionsPagerAdapter.addFragment(new Fragment_First(), "Tab 1");
-        sectionsPagerAdapter.addFragment(new Fragment_Second(), "Tab 2");
-        sectionsPagerAdapter.addFragment(new Fragment_Third(), "Tab 3");
+        sectionsPagerAdapter.addFragment(new Fragment_First(), getString(R.string.tab_text_1));
+        sectionsPagerAdapter.addFragment(new Fragment_Second(), getString(R.string.tab_text_2));
+        sectionsPagerAdapter.addFragment(new Fragment_Third(), getString(R.string.tab_text_3));
         viewPager.setAdapter(sectionsPagerAdapter);
     }
 
