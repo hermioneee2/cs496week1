@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
@@ -23,8 +22,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 import java.util.TreeSet;
 
 import link.fls.swipestack.SwipeStack;
@@ -58,15 +55,15 @@ public class Fragment_Third extends Fragment {
     private int currentPosition;
 
     //WHEELVIEW
-//    private WheelView wv_city, wv_county, wv_name;
-    private WheelView wv_city, wv_county, wv_sid;
+//    private WheelView wv_name, wv_univ, wv_name;
+    private WheelView wv_name, wv_univ, wv_sid;
 //    private CityAdapter cityAdapter;
 //    private CountyAdapter countyAdapter;
     private NameAdapter nameAdapter;
     private UnivAdapter univAdapter;
     private SidAdapter sidAdapter;
-//    private TextView tv_city, tv_county, tv_number;
-    private TextView tv_city, tv_county, tv_sid;
+//    private TextView tv_name, tv_univ, tv_number;
+    private TextView tv_name, tv_univ, tv_sid;
     private WheelView wv_number;
 
     private String curName;
@@ -89,8 +86,6 @@ public class Fragment_Third extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-        // People Image
-//        Resources res = getResources();
 
 //        // TODO: completed here, apply to tab 2 like this
 ////        // use string to easily find view by ID
@@ -136,12 +131,12 @@ public class Fragment_Third extends Fragment {
         cardStack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
             public void onViewSwipedToLeft(int position) {
-//                  currentPosition = position + 1;
+                  currentPosition = position + 1;
             }
 
             @Override
             public void onViewSwipedToRight(int position) {
-//                  currentPosition = position + 1;
+                  currentPosition = position + 1;
             }
 
             @Override
@@ -149,48 +144,6 @@ public class Fragment_Third extends Fragment {
                 // Todo: what should we do on stack empty?
             }
         });
-
-//        /* 水平滑轮控件 */
-//        wv_number.setAdapter(new WheelView.WheelAdapter() {
-//            @Override
-//            protected int getItemCount() {
-//                return 100;
-//            }
-//
-//            @Override
-//            protected String getItem(int index) {
-//                return String.valueOf(index);
-//            }
-//        });
-//        wv_number.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(WheelView wv, int index) {
-//                tv_number.setText("水平布局"+index);
-//            }
-//        });
-//        wv_number.setCurrentItem(88);
-
-//
-//        nameRV = view.findViewById(R.id.idRVNames);
-//        univRV = view.findViewById(R.id.idRVUnivs);
-//        sidRV = view.findViewById(R.id.idRVSids);
-//
-//        nameRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//        univRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//        sidRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//
-//        nameRV.setLayoutManager(nameRVLayoutManager);
-//        univRV.setLayoutManager(univRVLayoutManager);
-//        sidRV.setLayoutManager(sidRVLayoutManager);
-
-        //위에 바꿔보려 했는데 생각해보니 필요없을듯
-//        nameRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//        univRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//        sidRVLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//
-//        wv_city.mRecyclerView.setLayoutManager(nameRVLayoutManager);
-//        wv_county.mRecyclerView.setLayoutManager(univRVLayoutManager);
-//        wv_sid.mRecyclerView.setLayoutManager(sidRVLayoutManager);
 
         TreeSet<String> selectedNameSet = new TreeSet<>();
         TreeSet<String> selectedUnivSet = new TreeSet<>();
@@ -205,73 +158,23 @@ public class Fragment_Third extends Fragment {
         selectedUniqueName = new ArrayList<>(selectedNameSet);
         selectedUniqueUniv = new ArrayList<>(selectedUnivSet);
         selectedUniqueSid = new ArrayList<>(selectedSidSet);
-//
-//        nameRVAdapter = new NameRVAdapter(getActivity(), selectedUniqueName);
-//        univRVAdapter = new UnivRVAdapter(getActivity(), selectedUniqueUniv);
-//        sidRVAdapter = new SidRVAdapter(getActivity(), selectedUniqueSid);
-//
-//        nameRV.setAdapter(nameRVAdapter);
-//        univRV.setAdapter(univRVAdapter);
-//        sidRV.setAdapter(sidRVAdapter);
-//
-//        // Todo: snapping on boot?
-//        nameHelper = new PagerSnapHelper();
-//        univHelper = new PagerSnapHelper();
-//        sidHelper = new PagerSnapHelper();
-//
-//        nameHelper.attachToRecyclerView(nameRV);
-//        univHelper.attachToRecyclerView(univRV);
-//        sidHelper.attachToRecyclerView(sidRV);
-//
-//        nameRV.addOnScrollListener(new RVScrollListener());
-//        univRV.addOnScrollListener(new RVScrollListener());
-//        sidRV.addOnScrollListener(new RVScrollListener());
-//
-//        nameRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
-//        univRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
-//        sidRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
 
         //WheelView
-//        getActivity().setContentView(R.layout.activity_main);
-//        getActivity().setTitle("游小陈的博客");
-
-        wv_city = (WheelView) view.findViewById(R.id.wv_city);
-        wv_county = (WheelView) view.findViewById(R.id.wv_county);
-//        wv_number = (WheelView) view.findViewById(R.id.wv_number);
-//        wv_name = (WheelView) view.findViewById(R.id.wv_name);
-        wv_sid = (WheelView) view.findViewById(R.id.wv_name);
-        tv_city = (TextView) view.findViewById(R.id.tv_city);
-        tv_county = (TextView) view.findViewById(R.id.tv_county);
+        wv_name = (WheelView) view.findViewById(R.id.wv_name);
+        wv_univ = (WheelView) view.findViewById(R.id.wv_univ);
+        wv_sid = (WheelView) view.findViewById(R.id.wv_sid);
+        tv_name = (TextView) view.findViewById(R.id.tv_name);
+        tv_univ = (TextView) view.findViewById(R.id.tv_univ);
         tv_sid = (TextView) view.findViewById(R.id.tv_sid);
-//        tv_number = (TextView) view.findViewById(R.id.tv_number);
-
-//        /* 市滑轮控件 */
-//        cityAdapter = new CityAdapter();
-//        wv_city.setAdapter(cityAdapter);
-//        wv_city.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(WheelView wv, int index) {
-//                tv_city.setText("市: "+cityAdapter.getItem(index));
-//                List<String> strs = Arrays.asList(TestDatas.AREAS[index]);
-////                List<String> strs = Arrays.asList(selectedUniqueName.get(index));
-//                countyAdapter.strs.clear();
-//                countyAdapter.strs.addAll(strs);
-//                countyAdapter.notifyDataSetChanged();
-//                wv_county.setCurrentItem(0);
-//                tv_county.setText("县: "+countyAdapter.getItem(0));
-//            }
-//        });
-
-
 
         /* 市滑轮控件 */
         nameAdapter = new NameAdapter();
-        wv_city.setAdapter(nameAdapter);
-        wv_city.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+        wv_name.setAdapter(nameAdapter);
+        wv_name.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curName = nameAdapter.getItem(index);
-                tv_city.setText("市: "+nameAdapter.getItem(index));
+                tv_name.setText("市: "+nameAdapter.getItem(index));
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
@@ -285,15 +188,14 @@ public class Fragment_Third extends Fragment {
             }
         });
 
-
         /* 区滑轮控件 */
         univAdapter = new UnivAdapter();
-        wv_county.setAdapter(univAdapter);
-        wv_county.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+        wv_univ.setAdapter(univAdapter);
+        wv_univ.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curUniv = univAdapter.getItem(index);
-                tv_county.setText("县: "+univAdapter.getItem(index));
+                tv_univ.setText("县: "+univAdapter.getItem(index));
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
@@ -330,51 +232,9 @@ public class Fragment_Third extends Fragment {
         curName = nameAdapter.getItem(0);
         curUniv = univAdapter.getItem(0);
         curSid = sidAdapter.getItem(0);
-        tv_city.setText(curName);
-        tv_county.setText(curUniv);
+        tv_name.setText(curName);
+        tv_univ.setText(curUniv);
         tv_sid.setText(curSid);
-
-//        countyAdapter = new CountyAdapter();
-//        wv_county.setAdapter(countyAdapter);
-
-
-//        /*  名字适配  */
-//        wv_name.setAdapter(new WheelView.WheelAdapter() {
-//            @Override
-//            protected int getItemCount() {
-//                return 20;
-//            }
-//
-//            @Override
-//            protected String getItem(int index) {
-//                return "游小陈";
-//            }
-//        });
-
-//        nameRVAdapter = new NameRVAdapter(getActivity(), selectedUniqueName);
-//        univRVAdapter = new UnivRVAdapter(getActivity(), selectedUniqueUniv);
-//        sidRVAdapter = new SidRVAdapter(getActivity(), selectedUniqueSid);
-//
-//        wv_city.setAdapter(nameRVAdapter);
-//        wv_county.setAdapter(univRVAdapter);
-//        wv_sid.setAdapter(sidRVAdapter);
-
-        // Todo: snapping on boot?
-//        nameHelper = new PagerSnapHelper();
-//        univHelper = new PagerSnapHelper();
-//        sidHelper = new PagerSnapHelper();
-
-//        nameHelper.attachToRecyclerView(wv_city.mRecyclerView);
-//        univHelper.attachToRecyclerView(wv_county.mRecyclerView);
-//        sidHelper.attachToRecyclerView(wv_sid.mRecyclerView);
-
-//        wv_city.mRecyclerView.addOnScrollListener(new RVScrollListener());
-//        wv_county.mRecyclerView.addOnScrollListener(new RVScrollListener());
-//        wv_sid.mRecyclerView.addOnScrollListener(new RVScrollListener());
-
-//        nameRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
-//        univRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
-//        sidRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
 
         return view;
     }
@@ -499,16 +359,6 @@ public class Fragment_Third extends Fragment {
         }
     }
 
-//    public boolean checkCorrect() {
-//        TextView nameSnapView = (TextView) nameHelper.findSnapView(nameRVLayoutManager);
-//        TextView univSnapView = (TextView) univHelper.findSnapView(univRVLayoutManager);
-//        TextView sidSnapView = (TextView) sidHelper.findSnapView(sidRVLayoutManager);
-//
-//        return (nameSnapView.getText().toString().equals(selectedArrayList.get(currentPosition).getName()) &
-//                univSnapView.getText().toString().equals(selectedArrayList.get(currentPosition).getUniversity()) &
-//                sidSnapView.getText().toString().equals(selectedArrayList.get(currentPosition).getSt_number()));
-//    }
-
     public boolean checkCorrect() {
         return (curName.equals(selectedArrayList.get(currentPosition).getName()) &
                 curUniv.equals(selectedArrayList.get(currentPosition).getUniversity()) &
@@ -522,13 +372,8 @@ public class Fragment_Third extends Fragment {
         Resources resources = getResources();
 
         for (int i = 0; i < selectedArrayList.size(); i++) {
-//            ImageView imageView = (ImageView) view.findViewById(R.id.avatar);
-
             String mDrawableName = "photo" + (i + 1);
             int imageID = resources.getIdentifier(mDrawableName, "drawable", getActivity().getPackageName());
-//            Drawable drawable = resources.getDrawable(imageID);
-
-//            imageView.setImageDrawable(drawable);
 
             cardItems.add(new CardItem(imageID));
         }
@@ -536,33 +381,6 @@ public class Fragment_Third extends Fragment {
         cardsAdapter = new CardsAdapter(getActivity(), cardItems);
         cardStack.setAdapter(cardsAdapter);
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (item.getItemId() == R.id.reset) {
-//            cardStack.resetStack();
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
-    //WHEELVIEW
-//    private class CityAdapter extends WheelView.WheelAdapter {
-//        @Override
-//        protected int getItemCount() {
-//            return TestDatas.NAMES.length;
-//        }
-//
-//        @Override
-//        protected String getItem(int index) {
-//            return TestDatas.NAMES[index];
-//        }
-//    }
 
     private class NameAdapter extends WheelView.WheelAdapter {
         @Override
@@ -599,25 +417,4 @@ public class Fragment_Third extends Fragment {
             return selectedUniqueSid.get(index);
         }
     }
-
-//    private class CountyAdapter extends WheelView.WheelAdapter {
-//        private List<String> strs;
-//
-//        CountyAdapter() {
-//            strs = new ArrayList<>();
-//        }
-//
-//        @Override
-//        protected int getItemCount() {
-//            return strs.size();
-//        }
-//
-//        @Override
-//        protected String getItem(int index) {
-//            return strs.get(index);
-//        }
-//    }
-
-
-
 }

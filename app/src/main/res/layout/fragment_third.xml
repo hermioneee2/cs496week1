@@ -138,12 +138,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView android:id="@+id/tv_city"
+                <TextView android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="选择的市"/>
 
-                <TextView android:id="@+id/tv_county"
+                <TextView android:id="@+id/tv_univ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
@@ -159,7 +159,7 @@
 
 
             <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_city"
+                android:id="@+id/wv_name"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -171,7 +171,7 @@
                 app:wheelTextSize="18sp"/>
 
             <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_county"
+                android:id="@+id/wv_univ"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                 app:wheelTextSize="18sp"/>
 
             <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_name"
+                android:id="@+id/wv_sid"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -194,25 +194,6 @@
                 app:wheelTextSize="18sp"/>
 
         </LinearLayout>
-
-<!--        <TextView android:id="@+id/tv_number"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:textSize="18sp"-->
-<!--            android:text="水平布局88"/>-->
-
-<!--        <com.example.cs496week1.ui.main.widget.WheelView-->
-<!--            android:id="@+id/wv_number"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            app:wheelItemCount="6"-->
-<!--            app:wheelItemSize="45dp"-->
-<!--            app:wheelDividerSize="48dp"-->
-<!--            app:wheelOrientation="horizontal"-->
-<!--            app:wheelTextSize="25sp"/>-->
 
     </LinearLayout>
 </RelativeLayout>
