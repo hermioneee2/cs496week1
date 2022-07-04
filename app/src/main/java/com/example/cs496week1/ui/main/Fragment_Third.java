@@ -179,7 +179,7 @@ public class Fragment_Third extends Fragment {
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
-                    currentPosition++;
+//                    currentPosition++;
                     if (currentPosition % 2 == 0) {
                         cardStack.swipeTopViewToRight();
                     } else {
@@ -200,7 +200,7 @@ public class Fragment_Third extends Fragment {
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
-                    currentPosition++;
+//                    currentPosition++;
                     if (currentPosition % 2 == 0) {
                         cardStack.swipeTopViewToRight();
                     } else {
@@ -220,7 +220,7 @@ public class Fragment_Third extends Fragment {
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
-                    currentPosition++;
+//                    currentPosition++;
                     if (currentPosition % 2 == 0) {
                         cardStack.swipeTopViewToRight();
                     } else {
@@ -238,126 +238,6 @@ public class Fragment_Third extends Fragment {
         tv_sid.setText(curSid);
 
         return view;
-    }
-
-//    //read json and return string
-//    private String getJsonString() {`
-//        String json = "";
-//
-//        try {
-//            InputStream is = getActivity().getAssets().open("People.json");
-//            int fileSize = is.available();
-//
-//            byte[] buffer = new byte[fileSize];
-//            is.read(buffer);
-//            is.close();
-//
-//            json = new String(buffer, "UTF-8");
-//        }
-//        catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//
-//        return json;
-//    }
-//
-//    private void jsonParsing(String json) {
-//        try {
-//            JSONObject jsonObject = new JSONObject(json);
-//
-//            JSONArray peopleArray = jsonObject.getJSONArray("People");
-//            peopleArrayList = new ArrayList<People>();
-//
-//            for(int i = 0; i < peopleArray.length(); i++) {
-//                JSONObject peopleObject = peopleArray.getJSONObject(i);
-//
-//                People person = new People();
-//
-//                person.setId(peopleObject.getInt("id"));
-//                person.setName(peopleObject.getString("name"));
-//                person.setUniversity(peopleObject.getString("university"));
-//                person.setSt_number(peopleObject.getString("st_number"));
-//                person.setPic_src(peopleObject.getString("pic_src"));
-//
-//                peopleArrayList.add(person);
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    // class to contain people data from json after reading
-//    public class People{
-//        private Integer id;
-//        private String name;
-//        private String university;
-//        private String st_number;
-//        private String pic_src;
-//
-//        public Integer getId() {
-//            return id;
-//        }
-//
-//        public void setId(Integer id) {
-//            this.id = id;
-//        }
-//
-//        public String getName() {
-//            return name;
-//        }
-//
-//        public void setName(String name) {
-//            this.name = name;
-//        }
-//
-//        public String getUniversity() {
-//            return university;
-//        }
-//
-//        public void setUniversity(String university) {
-//            this.university = university;
-//        }
-//
-//        public String getSt_number() {
-//            return st_number;
-//        }
-//
-//        public void setSt_number(String st_number) {
-//            this.st_number = st_number;
-//        }
-//
-//        public String getPic_src() {
-//            return pic_src;
-//        }
-//
-//        public void setPic_src(String pic_src) {
-//            this.pic_src = pic_src;
-//        }
-//    }
-
-    //SLIDER
-    public class RVScrollListener extends RecyclerView.OnScrollListener {
-        public RVScrollListener() {
-        }
-
-        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-            switch (newState) {
-                case RecyclerView.SCROLL_STATE_SETTLING:
-                    if (checkCorrect()) {
-                        // Todo: add functionality here
-                        // This part handles the case of full match
-                        currentPosition++;
-                        if (currentPosition % 2 == 0) {
-                            cardStack.swipeTopViewToRight();
-                        } else {
-                            cardStack.swipeTopViewToLeft();
-                        }
-                    }
-                case RecyclerView.SCROLL_STATE_DRAGGING:
-                case RecyclerView.SCROLL_STATE_IDLE:
-                    break;
-            }
-        }
     }
 
     public boolean checkCorrect() {
