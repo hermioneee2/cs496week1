@@ -64,7 +64,7 @@ public class Fragment_Third extends Fragment {
     private UnivAdapter univAdapter;
     private SidAdapter sidAdapter;
 //    private TextView tv_name, tv_univ, tv_number;
-    private TextView tv_name, tv_univ, tv_sid;
+//    private TextView tv_name, tv_univ, tv_sid;
     private WheelView wv_number;
 
     private String curName;
@@ -164,9 +164,9 @@ public class Fragment_Third extends Fragment {
         wv_name = (WheelView) view.findViewById(R.id.wv_name);
         wv_univ = (WheelView) view.findViewById(R.id.wv_univ);
         wv_sid = (WheelView) view.findViewById(R.id.wv_sid);
-        tv_name = (TextView) view.findViewById(R.id.tv_name);
-        tv_univ = (TextView) view.findViewById(R.id.tv_univ);
-        tv_sid = (TextView) view.findViewById(R.id.tv_sid);
+//        tv_name = (TextView) view.findViewById(R.id.tv_name);
+//        tv_univ = (TextView) view.findViewById(R.id.tv_univ);
+//        tv_sid = (TextView) view.findViewById(R.id.tv_sid);
 
         /* 市滑轮控件 */
         nameAdapter = new NameAdapter();
@@ -175,7 +175,7 @@ public class Fragment_Third extends Fragment {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curName = nameAdapter.getItem(index);
-                tv_name.setText("市: "+nameAdapter.getItem(index));
+//                tv_name.setText("市: "+nameAdapter.getItem(index));
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
@@ -196,7 +196,7 @@ public class Fragment_Third extends Fragment {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curUniv = univAdapter.getItem(index);
-                tv_univ.setText("县: "+univAdapter.getItem(index));
+//                tv_univ.setText("县: "+univAdapter.getItem(index));
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
@@ -216,7 +216,7 @@ public class Fragment_Third extends Fragment {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curSid = sidAdapter.getItem(index);
-                tv_sid.setText("县: "+sidAdapter.getItem(index));
+//                tv_sid.setText("县: "+sidAdapter.getItem(index));
                 if (checkCorrect()) {
                     // Todo: add functionality here
                     // This part handles the case of full match
@@ -233,9 +233,9 @@ public class Fragment_Third extends Fragment {
         curName = nameAdapter.getItem(0);
         curUniv = univAdapter.getItem(0);
         curSid = sidAdapter.getItem(0);
-        tv_name.setText(curName);
-        tv_univ.setText(curUniv);
-        tv_sid.setText(curSid);
+//        tv_name.setText(curName);
+//        tv_univ.setText(curUniv);
+//        tv_sid.setText(curSid);
 
         return view;
     }

@@ -22,70 +22,7 @@
             app:stack_rotation="0"
             app:stack_size="3" />
 
-<!--        <link.fls.swipestack.SwipeStack-->
-<!--            android:id="@+id/container"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:padding="@dimen/padding_swipestack"-->
-<!--            app:stack_rotation="0"-->
-<!--            app:stack_size="3" />-->
-
-        <!--??? view for displaying images-->
-
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView3"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_below="@id/imageView3" />-->
-
     </RelativeLayout>
-
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/fragmentThirdBottom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_below="@id/fragmentThirdTop" >-->
-
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="@drawable/gradient"-->
-<!--            android:elevation="2dp" />-->
-
-<!--        &lt;!&ndash;Recycler view for displaying list of names&ndash;&gt;-->
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/idRVNames"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_centerHorizontal="true" />-->
-
-<!--        &lt;!&ndash;Recycler view for displaying list of universities&ndash;&gt;-->
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/idRVUnivs"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_below="@id/idRVNames"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="10dp" />-->
-
-<!--        &lt;!&ndash;Recycler view for displaying list of year of admissions (student_id)&ndash;&gt;-->
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/idRVSids"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_below="@id/idRVUnivs"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="10dp" />-->
-<!--    </RelativeLayout>-->
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -95,67 +32,36 @@
         android:layout_below="@id/fragmentThirdTop"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:paddingLeft="80dp">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textColor="#ff00ff"-->
-<!--                android:gravity="center"-->
-<!--                android:text="靠左立体"/>-->
-
-<!--            <TextView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textColor="#ff00ff"-->
-<!--                android:gravity="center"-->
-<!--                android:text="居中立体"/>-->
-
-<!--            <TextView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textColor="#ff00ff"-->
-<!--                android:gravity="center"-->
-<!--                android:text="靠右立体"/>-->
-
-<!--        </LinearLayout>-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="选择的市"/>
+<!--                <TextView android:id="@+id/tv_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="选择的市"/>-->
 
-                <TextView android:id="@+id/tv_univ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:hint="选择的县"/>
+<!--                <TextView android:id="@+id/tv_univ"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:hint="选择的县"/>-->
 
-                <TextView android:id="@+id/tv_sid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:hint="选择的县"/>
+<!--                <TextView android:id="@+id/tv_sid"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:hint="选择的县"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
             <com.example.cs496week1.ui.main.widget.WheelView
