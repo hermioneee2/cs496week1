@@ -68,7 +68,7 @@ public class WheelView extends FrameLayout {
     /**
      * recyclerView
      */
-    private RecyclerView mRecyclerView;
+    public RecyclerView mRecyclerView;
     private LinearLayoutManager layoutManager;
     /**
      * wheel 3d
