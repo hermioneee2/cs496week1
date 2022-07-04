@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="#FAF4F4"
+        android:background="@drawable/bg_border"
         >
 
         <TextView
@@ -77,7 +77,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/imageName"
             android:text="Univ Sid"
-            android:textColor="@color/black"
+            android:textColor="#403D3D"
             android:textSize="13sp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/leferibaseregular"
