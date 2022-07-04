@@ -26,8 +26,14 @@
         android:layout_marginEnd="8dp"
         android:layout_toEndOf="@id/idIVContact"
         android:text="Contact Name"
-        android:textColor="@color/black"
+        android:textColor="#252424"
         android:fontFamily="@font/leferibaseregular"
         />
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#F8F4F4"-->
+<!--        android:layout_marginTop="-3dp"/>-->
 
 </RelativeLayout>
