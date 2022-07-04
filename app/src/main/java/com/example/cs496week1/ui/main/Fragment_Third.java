@@ -142,7 +142,8 @@ public class Fragment_Third extends Fragment {
 
             @Override
             public void onStackEmpty() {
-                // Todo: what should we do on stack empty?
+                cardStack.resetStack();
+                currentPosition = 0;
             }
         });
 
