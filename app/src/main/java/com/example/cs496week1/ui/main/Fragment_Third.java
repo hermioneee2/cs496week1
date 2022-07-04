@@ -2,12 +2,14 @@ package com.example.cs496week1.ui.main;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +25,20 @@ import link.fls.swipestack.SwipeStack;
 import com.example.cs496week1.ui.main.widget.WheelView;
 import com.yashovardhan99.timeit.Stopwatch;
 
-public class Fragment_Third extends Fragment {
+public class Fragment_Third extends Fragment implements ModalInstruction.OnInputSelected{
+
+    private static final String TAG = "MainFragment";
+
+    @Override
+    public void sendInput(String input) {
+        Log.d(TAG, "sendInput: found incoming input: " + input);
+
+        mInputDisplay.setText(input);
+    }
+
+    private Button mOpenDialog;
+    public TextView mInputDisplay;
+
 //    ArrayList<People> peopleArrayList;
 //    ArrayList<People> selectedArrayList;
     // position of currently displayed item
@@ -70,6 +85,8 @@ public class Fragment_Third extends Fragment {
     ArrayList<String> selectedUniqueUniv;
     ArrayList<String> selectedUniqueSid;
 
+    Stopwatch stopwatch;
+
     public Fragment_Third() {
         super(R.layout.fragment_third);
     }
@@ -82,6 +99,29 @@ public class Fragment_Third extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
+
+        //MODAL for instruction
+//        ModalInstruction e = ModalInstruction.getInstance();
+//        e.show(getActivity().getSupportFragmentManager(), ModalInstruction.TAG_EVENT_DIALOG);
+////        showNoticeDialog();
+
+//        mOpenDialog = view.findViewById(R.id.open_dialog);
+//        mInputDisplay = view.findViewById(R.id.input_display);
+//
+//        mOpenDialog.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d(TAG, "onClick: opening dialog");
+//
+//                ModalInstruction dialog = new ModalInstruction();
+//                dialog.setTargetFragment(Fragment_Third.this, 1);
+//                dialog.show(getFragmentManager(), "MyCustomDialog");
+//            }
+//        });
+
+        ModalInstruction dialog = new ModalInstruction();
+        dialog.setTargetFragment(Fragment_Third.this, 1);
+        dialog.show(getFragmentManager(), "MyCustomDialog");
 
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
@@ -198,9 +238,8 @@ public class Fragment_Third extends Fragment {
 //        tv_sid.setText(curSid);
 
         //TIMER
-        Stopwatch stopwatch = new Stopwatch();
+        stopwatch = new Stopwatch();
         stopwatch.setTextView(view.findViewById(R.id.timeNow));
-        stopwatch.start();
 
         Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
 
@@ -275,4 +314,26 @@ public class Fragment_Third extends Fragment {
             return selectedUniqueSid.get(index);
         }
     }
+//
+//    public void showNoticeDialog() {
+//        // Create an instance of the dialog fragment and show it
+//        ModalInstruction dialog = new ModalInstruction();
+//        dialog.show(getActivity().getSupportFragmentManager(), "NoticeDialogFragment");
+//
+//        //        ModalInstruction e = ModalInstruction.getInstance();
+////        e.show(getActivity().getSupportFragmentManager(), ModalInstruction.TAG_EVENT_DIALOG);
+//    }
+//
+//    // The dialog fragment receives a reference to this Activity through the
+//    // Fragment.onAttach() callback, which it uses to call the following methods
+//    // defined by the NoticeDialogFragment.NoticeDialogListener interface
+//    @Override
+//    public void onDialogPositiveClick(DialogFragment dialog) {
+//        stopwatch.start();
+//    }
+//
+//    @Override
+//    public void onDialogNegativeClick(DialogFragment dialog) {
+//
+//    }
 }
