@@ -115,12 +115,12 @@ public class Fragment_Third extends Fragment {
         cardStack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
             public void onViewSwipedToLeft(int position) {
-//                  currentPosition = position + 1;
+                  currentPosition = position + 1;
             }
 
             @Override
             public void onViewSwipedToRight(int position) {
-//                  currentPosition = position + 1;
+                  currentPosition = position + 1;
             }
 
             @Override
@@ -348,7 +348,5 @@ public class Fragment_Third extends Fragment {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
-
-
 
 }
