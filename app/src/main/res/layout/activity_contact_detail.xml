@@ -27,7 +27,9 @@
         android:padding="8dp"
         android:text="Name"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:fontFamily="@font/leferibasebold"
+        />
 
     <!--cardview for displaying user contact-->
     <androidx.cardview.widget.CardView
@@ -68,7 +70,9 @@
                 android:layout_toStartOf="@id/idIVMessage"
                 android:layout_toEndOf="@id/idIVCall"
                 android:layout_toRightOf="@id/idIVCall"
-                android:text="Phone" />
+                android:text="Phone"
+                android:fontFamily="@font/leferibaseregular"
+                />
 
             <!--image view for displaying message icon-->
             <ImageView

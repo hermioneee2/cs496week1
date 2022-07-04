@@ -13,14 +13,50 @@
     app:flipFrom="front"
     app:autoFlipBack="true"
     app:autoFlipBackTime="2000"
+
     >
 
-    <!-- Back Layout Goes Here -->
+<!--    &lt;!&ndash; Back Layout Goes Here &ndash;&gt;-->
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/imageRV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@color/purple_500"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/imageName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:text="Name"-->
+<!--            android:textColor="#FAF4F4"-->
+<!--            android:textSize="18sp"-->
+<!--            android:fontFamily="@font/leferibaseregular"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/imageUnivSid"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_below="@id/imageName"-->
+<!--            android:text="Univ Sid"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="13sp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:fontFamily="@font/leferibaseregular"-->
+<!--            />-->
+
+<!--    </RelativeLayout>-->
+
     <RelativeLayout
         android:id="@+id/imageRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:background="#FAF4F4"
         >
 
         <TextView
@@ -29,8 +65,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="Name"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            android:fontFamily="@font/leferibaseregular"
             />
 
         <TextView
@@ -41,8 +78,9 @@
             android:layout_below="@id/imageName"
             android:text="Univ Sid"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/leferibaseregular"
             />
 
     </RelativeLayout>
