@@ -58,11 +58,20 @@ public class Fragment_Third extends Fragment {
     private int currentPosition;
 
     //WHEELVIEW
-    private WheelView wv_city, wv_county, wv_name;
+//    private WheelView wv_city, wv_county, wv_name;
+    private WheelView wv_city, wv_county, wv_sid;
     private CityAdapter cityAdapter;
     private CountyAdapter countyAdapter;
-    private TextView tv_city, tv_county, tv_number;
+    private NameAdapter nameAdapter;
+    private UnivAdapter univAdapter;
+    private SidAdapter sidAdapter;
+//    private TextView tv_city, tv_county, tv_number;
+    private TextView tv_city, tv_county, tv_sid;
     private WheelView wv_number;
+
+    ArrayList<String> selectedUniqueName;
+    ArrayList<String> selectedUniqueUniv;
+    ArrayList<String> selectedUniqueSid;
 
     public Fragment_Third() {
         super(R.layout.fragment_third);
@@ -137,59 +146,6 @@ public class Fragment_Third extends Fragment {
             }
         });
 
-        //WheelView
-//        getActivity().setContentView(R.layout.activity_main);
-        getActivity().setTitle("游小陈的博客");
-
-        wv_city = (WheelView) view.findViewById(R.id.wv_city);
-        wv_county = (WheelView) view.findViewById(R.id.wv_county);
-//        wv_number = (WheelView) view.findViewById(R.id.wv_number);
-        wv_name = (WheelView) view.findViewById(R.id.wv_name);
-        tv_city = (TextView) view.findViewById(R.id.tv_city);
-        tv_county = (TextView) view.findViewById(R.id.tv_county);
-//        tv_number = (TextView) view.findViewById(R.id.tv_number);
-
-        /* 市滑轮控件 */
-        cityAdapter = new CityAdapter();
-        wv_city.setAdapter(cityAdapter);
-        wv_city.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(WheelView wv, int index) {
-                tv_city.setText("市: "+cityAdapter.getItem(index));
-                List<String> strs = Arrays.asList(TestDatas.AREAS[index]);
-                countyAdapter.strs.clear();
-                countyAdapter.strs.addAll(strs);
-                countyAdapter.notifyDataSetChanged();
-                wv_county.setCurrentItem(0);
-                tv_county.setText("县: "+countyAdapter.getItem(0));
-            }
-        });
-
-
-        /* 区滑轮控件 */
-        wv_county.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(WheelView wv, int index) {
-                tv_county.setText("县: "+countyAdapter.getItem(index));
-            }
-        });
-
-        countyAdapter = new CountyAdapter();
-        wv_county.setAdapter(countyAdapter);
-
-        /*  名字适配  */
-        wv_name.setAdapter(new WheelView.WheelAdapter() {
-            @Override
-            protected int getItemCount() {
-                return 20;
-            }
-
-            @Override
-            protected String getItem(int index) {
-                return "游小陈";
-            }
-        });
-
 //        /* 水平滑轮控件 */
 //        wv_number.setAdapter(new WheelView.WheelAdapter() {
 //            @Override
@@ -223,19 +179,19 @@ public class Fragment_Third extends Fragment {
 //        univRV.setLayoutManager(univRVLayoutManager);
 //        sidRV.setLayoutManager(sidRVLayoutManager);
 //
-//        TreeSet<String> selectedNameSet = new TreeSet<>();
-//        TreeSet<String> selectedUnivSet = new TreeSet<>();
-//        TreeSet<String> selectedSidSet = new TreeSet<>();
-//
-//        for (int i = 0; i < selectedArrayList.size(); i++) {
-//            selectedNameSet.add(selectedArrayList.get(i).getName());
-//            selectedUnivSet.add(selectedArrayList.get(i).getUniversity());
-//            selectedSidSet.add(selectedArrayList.get(i).getSt_number());
-//        }
-//
-//        ArrayList<String> selectedUniqueName = new ArrayList<>(selectedNameSet);
-//        ArrayList<String> selectedUniqueUniv = new ArrayList<>(selectedUnivSet);
-//        ArrayList<String> selectedUniqueSid = new ArrayList<>(selectedSidSet);
+        TreeSet<String> selectedNameSet = new TreeSet<>();
+        TreeSet<String> selectedUnivSet = new TreeSet<>();
+        TreeSet<String> selectedSidSet = new TreeSet<>();
+
+        for (int i = 0; i < selectedArrayList.size(); i++) {
+            selectedNameSet.add(selectedArrayList.get(i).getName());
+            selectedUnivSet.add(selectedArrayList.get(i).getUniversity());
+            selectedSidSet.add(selectedArrayList.get(i).getSt_number());
+        }
+
+        selectedUniqueName = new ArrayList<>(selectedNameSet);
+        selectedUniqueUniv = new ArrayList<>(selectedUnivSet);
+        selectedUniqueSid = new ArrayList<>(selectedSidSet);
 //
 //        nameRVAdapter = new NameRVAdapter(getActivity(), selectedUniqueName);
 //        univRVAdapter = new UnivRVAdapter(getActivity(), selectedUniqueUniv);
@@ -261,6 +217,84 @@ public class Fragment_Third extends Fragment {
 //        nameRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
 //        univRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
 //        sidRVLayoutManager.scrollToPosition(Integer.MAX_VALUE / 2);
+
+        //WheelView
+//        getActivity().setContentView(R.layout.activity_main);
+        getActivity().setTitle("游小陈的博客");
+
+        wv_city = (WheelView) view.findViewById(R.id.wv_city);
+        wv_county = (WheelView) view.findViewById(R.id.wv_county);
+//        wv_number = (WheelView) view.findViewById(R.id.wv_number);
+//        wv_name = (WheelView) view.findViewById(R.id.wv_name);
+        wv_sid = (WheelView) view.findViewById(R.id.wv_name);
+        tv_city = (TextView) view.findViewById(R.id.tv_city);
+        tv_county = (TextView) view.findViewById(R.id.tv_county);
+        tv_sid = (TextView) view.findViewById(R.id.tv_sid);
+//        tv_number = (TextView) view.findViewById(R.id.tv_number);
+
+//        /* 市滑轮控件 */
+//        cityAdapter = new CityAdapter();
+//        wv_city.setAdapter(cityAdapter);
+//        wv_city.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(WheelView wv, int index) {
+//                tv_city.setText("市: "+cityAdapter.getItem(index));
+//                List<String> strs = Arrays.asList(TestDatas.AREAS[index]);
+////                List<String> strs = Arrays.asList(selectedUniqueName.get(index));
+//                countyAdapter.strs.clear();
+//                countyAdapter.strs.addAll(strs);
+//                countyAdapter.notifyDataSetChanged();
+//                wv_county.setCurrentItem(0);
+//                tv_county.setText("县: "+countyAdapter.getItem(0));
+//            }
+//        });
+
+        /* 市滑轮控件 */
+        nameAdapter = new NameAdapter();
+        wv_city.setAdapter(nameAdapter);
+        wv_city.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(WheelView wv, int index) {
+                tv_city.setText("市: "+nameAdapter.getItem(index));
+            }
+        });
+
+
+        /* 区滑轮控件 */
+        univAdapter = new UnivAdapter();
+        wv_county.setAdapter(univAdapter);
+        wv_county.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(WheelView wv, int index) {
+                tv_county.setText("县: "+univAdapter.getItem(index));
+            }
+        });
+
+        sidAdapter = new SidAdapter();
+        wv_sid.setAdapter(sidAdapter);
+        wv_sid.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(WheelView wv, int index) {
+                tv_sid.setText("县: "+sidAdapter.getItem(index));
+            }
+        });
+
+//        countyAdapter = new CountyAdapter();
+//        wv_county.setAdapter(countyAdapter);
+
+
+//        /*  名字适配  */
+//        wv_name.setAdapter(new WheelView.WheelAdapter() {
+//            @Override
+//            protected int getItemCount() {
+//                return 20;
+//            }
+//
+//            @Override
+//            protected String getItem(int index) {
+//                return "游小陈";
+//            }
+//        });
 
         return view;
     }
@@ -441,6 +475,42 @@ public class Fragment_Third extends Fragment {
         @Override
         protected String getItem(int index) {
             return TestDatas.NAMES[index];
+        }
+    }
+
+    private class NameAdapter extends WheelView.WheelAdapter {
+        @Override
+        protected int getItemCount() {
+            return selectedUniqueName.size();
+        }
+
+        @Override
+        protected String getItem(int index) {
+            return selectedUniqueName.get(index);
+        }
+    }
+
+    private class UnivAdapter extends WheelView.WheelAdapter {
+        @Override
+        protected int getItemCount() {
+            return selectedUniqueUniv.size();
+        }
+
+        @Override
+        protected String getItem(int index) {
+            return selectedUniqueUniv.get(index);
+        }
+    }
+
+    private class SidAdapter extends WheelView.WheelAdapter {
+        @Override
+        protected int getItemCount() {
+            return selectedUniqueSid.size();
+        }
+
+        @Override
+        protected String getItem(int index) {
+            return selectedUniqueSid.get(index);
         }
     }
 
