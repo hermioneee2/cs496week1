@@ -8,14 +8,18 @@
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.107" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18065134684244788" />
         <entry key="app/src/main/res/layout/card.xml" value="0.2930253623188406" />
         <entry key="app/src/main/res/layout/contacts_rv_item.xml" value="0.203125" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/image_back.xml" value="0.14629629629629629" />
+        <entry key="app/src/main/res/layout/image_front.xml" value="0.154296875" />
+        <entry key="app/src/main/res/layout/image_item.xml" value="0.13724936026114007" />
         <entry key="app/src/main/res/layout/names_rv_item.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/sids_rv_item.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/temp.xml" value="0.2398427260812582" />
         <entry key="app/src/main/res/layout/univs_rv_item.xml" value="0.21822916666666667" />
       </map>
     </option>

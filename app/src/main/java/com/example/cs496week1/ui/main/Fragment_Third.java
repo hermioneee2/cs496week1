@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import com.example.cs496week1.Commons;
 import com.example.cs496week1.R;
 
 import org.json.JSONArray;
@@ -28,16 +29,18 @@ import link.fls.swipestack.SwipeStack;
 import com.example.cs496week1.ui.main.widget.WheelView;
 
 public class Fragment_Third extends Fragment {
-    ArrayList<People> peopleArrayList;
-    ArrayList<People> selectedArrayList;
+//    ArrayList<People> peopleArrayList;
+//    ArrayList<People> selectedArrayList;
+    // position of currently displayed item
+    private int currentPosition;
+
+    //Slider
     private RecyclerView nameRV;
     private RecyclerView univRV;
     private RecyclerView sidRV;
     private NameRVAdapter nameRVAdapter;
     private UnivRVAdapter univRVAdapter;
     private SidRVAdapter sidRVAdapter;
-
-    //Slider
     private SnapHelper nameHelper;
     private SnapHelper univHelper;
     private SnapHelper sidHelper;
@@ -51,8 +54,6 @@ public class Fragment_Third extends Fragment {
     private ArrayList<CardItem> cardItems;
     private View btnCancel;
     private View btnLove;
-    // position of currently displayed item
-    private int currentPosition;
 
     //WHEELVIEW
 //    private WheelView wv_name, wv_univ, wv_name;
@@ -104,24 +105,24 @@ public class Fragment_Third extends Fragment {
 //
 //        iv.setImageDrawable(drawable);
 
-        // People Info
         // Todo: should this be elsewhere?
-        jsonParsing(getJsonString());
+//        jsonParsing(getJsonString());
 
-        ArrayList<Integer> idList = new ArrayList<>(Arrays.asList(1, 2, 4));
+//        ArrayList<Integer> idList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+//                11, 12, 13, 14, 15, 16, 17, 18, 19, 20));
 
         // IMPORTANT NOTE: both idList and peopleArrayList should be in increasing order of id
         //                 in order for this to properly function
-        selectedArrayList = new ArrayList<People>();
-        int j = 0;
-        for (int i = 0; i < idList.size(); i++) {
-//            int j = 0;
-            while (peopleArrayList.get(j).getId() != idList.get(i)) {
-                j++;
-            }
-            selectedArrayList.add(peopleArrayList.get(j));
-            j++;
-        }
+//        selectedArrayList = new ArrayList<People>();
+//        int j = 0;
+//        for (int i = 0; i < idList.size(); i++) {
+////            int j = 0;
+//            while (peopleArrayList.get(j).getId() != idList.get(i)) {
+//                j++;
+//            }
+//            selectedArrayList.add(peopleArrayList.get(j));
+//            j++;
+//        }
 
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
@@ -149,10 +150,10 @@ public class Fragment_Third extends Fragment {
         TreeSet<String> selectedUnivSet = new TreeSet<>();
         TreeSet<String> selectedSidSet = new TreeSet<>();
 
-        for (int i = 0; i < selectedArrayList.size(); i++) {
-            selectedNameSet.add(selectedArrayList.get(i).getName());
-            selectedUnivSet.add(selectedArrayList.get(i).getUniversity());
-            selectedSidSet.add(selectedArrayList.get(i).getSt_number());
+        for (int i = 0; i < Commons.selectedArrayList.size(); i++) {
+            selectedNameSet.add(Commons.selectedArrayList.get(i).getName());
+            selectedUnivSet.add(Commons.selectedArrayList.get(i).getUniversity());
+            selectedSidSet.add(Commons.selectedArrayList.get(i).getSt_number());
         }
 
         selectedUniqueName = new ArrayList<>(selectedNameSet);
@@ -239,100 +240,100 @@ public class Fragment_Third extends Fragment {
         return view;
     }
 
-    //read json and return string
-    private String getJsonString() {
-        String json = "";
-
-        try {
-            InputStream is = getActivity().getAssets().open("People.json");
-            int fileSize = is.available();
-
-            byte[] buffer = new byte[fileSize];
-            is.read(buffer);
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        return json;
-    }
-
-    private void jsonParsing(String json) {
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-
-            JSONArray peopleArray = jsonObject.getJSONArray("People");
-            peopleArrayList = new ArrayList<People>();
-
-            for(int i = 0; i < peopleArray.length(); i++) {
-                JSONObject peopleObject = peopleArray.getJSONObject(i);
-
-                People person = new People();
-
-                person.setId(peopleObject.getInt("id"));
-                person.setName(peopleObject.getString("name"));
-                person.setUniversity(peopleObject.getString("university"));
-                person.setSt_number(peopleObject.getString("st_number"));
-                person.setPic_src(peopleObject.getString("pic_src"));
-
-                peopleArrayList.add(person);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // class to contain people data from json after reading
-    public class People{
-        private Integer id;
-        private String name;
-        private String university;
-        private String st_number;
-        private String pic_src;
-
-        public Integer getId() {
-            return id;
-        }
-
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getUniversity() {
-            return university;
-        }
-
-        public void setUniversity(String university) {
-            this.university = university;
-        }
-
-        public String getSt_number() {
-            return st_number;
-        }
-
-        public void setSt_number(String st_number) {
-            this.st_number = st_number;
-        }
-
-        public String getPic_src() {
-            return pic_src;
-        }
-
-        public void setPic_src(String pic_src) {
-            this.pic_src = pic_src;
-        }
-    }
+//    //read json and return string
+//    private String getJsonString() {`
+//        String json = "";
+//
+//        try {
+//            InputStream is = getActivity().getAssets().open("People.json");
+//            int fileSize = is.available();
+//
+//            byte[] buffer = new byte[fileSize];
+//            is.read(buffer);
+//            is.close();
+//
+//            json = new String(buffer, "UTF-8");
+//        }
+//        catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//
+//        return json;
+//    }
+//
+//    private void jsonParsing(String json) {
+//        try {
+//            JSONObject jsonObject = new JSONObject(json);
+//
+//            JSONArray peopleArray = jsonObject.getJSONArray("People");
+//            peopleArrayList = new ArrayList<People>();
+//
+//            for(int i = 0; i < peopleArray.length(); i++) {
+//                JSONObject peopleObject = peopleArray.getJSONObject(i);
+//
+//                People person = new People();
+//
+//                person.setId(peopleObject.getInt("id"));
+//                person.setName(peopleObject.getString("name"));
+//                person.setUniversity(peopleObject.getString("university"));
+//                person.setSt_number(peopleObject.getString("st_number"));
+//                person.setPic_src(peopleObject.getString("pic_src"));
+//
+//                peopleArrayList.add(person);
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    // class to contain people data from json after reading
+//    public class People{
+//        private Integer id;
+//        private String name;
+//        private String university;
+//        private String st_number;
+//        private String pic_src;
+//
+//        public Integer getId() {
+//            return id;
+//        }
+//
+//        public void setId(Integer id) {
+//            this.id = id;
+//        }
+//
+//        public String getName() {
+//            return name;
+//        }
+//
+//        public void setName(String name) {
+//            this.name = name;
+//        }
+//
+//        public String getUniversity() {
+//            return university;
+//        }
+//
+//        public void setUniversity(String university) {
+//            this.university = university;
+//        }
+//
+//        public String getSt_number() {
+//            return st_number;
+//        }
+//
+//        public void setSt_number(String st_number) {
+//            this.st_number = st_number;
+//        }
+//
+//        public String getPic_src() {
+//            return pic_src;
+//        }
+//
+//        public void setPic_src(String pic_src) {
+//            this.pic_src = pic_src;
+//        }
+//    }
 
     //SLIDER
     public class RVScrollListener extends RecyclerView.OnScrollListener {
@@ -360,9 +361,9 @@ public class Fragment_Third extends Fragment {
     }
 
     public boolean checkCorrect() {
-        return (curName.equals(selectedArrayList.get(currentPosition).getName()) &
-                curUniv.equals(selectedArrayList.get(currentPosition).getUniversity()) &
-                curSid.toString().equals(selectedArrayList.get(currentPosition).getSt_number()));
+        return (curName.equals(Commons.selectedArrayList.get(currentPosition).getName()) &
+                curUniv.equals(Commons.selectedArrayList.get(currentPosition).getUniversity()) &
+                curSid.equals(Commons.selectedArrayList.get(currentPosition).getSt_number()));
     }
 
     //CARD DECK
@@ -371,7 +372,7 @@ public class Fragment_Third extends Fragment {
 
         Resources resources = getResources();
 
-        for (int i = 0; i < selectedArrayList.size(); i++) {
+        for (int i = 0; i < Commons.selectedArrayList.size(); i++) {
             String mDrawableName = "photo" + (i + 1);
             int imageID = resources.getIdentifier(mDrawableName, "drawable", getActivity().getPackageName());
 
