@@ -19,6 +19,8 @@
         android:id="@+id/avatar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" />
+        android:gravity="center"
+        android:scaleType="centerCrop"
+        />
 
 </androidx.cardview.widget.CardView>
