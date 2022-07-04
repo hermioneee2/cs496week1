@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -27,6 +28,7 @@ import java.util.TreeSet;
 
 import link.fls.swipestack.SwipeStack;
 import com.example.cs496week1.ui.main.widget.WheelView;
+import com.yashovardhan99.timeit.Stopwatch;
 
 public class Fragment_Third extends Fragment {
 //    ArrayList<People> peopleArrayList;
@@ -87,42 +89,6 @@ public class Fragment_Third extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-
-//        // TODO: completed here, apply to tab 2 like this
-////        // use string to easily find view by ID
-////        String mViewName = "imageView3";
-////        int imageViewID = res.getIdentifier(mViewName , "id", getActivity().getPackageName());
-////        ImageView iv= (ImageView) view.findViewById(imageViewID);
-//
-//        // above three lines are equivalent to:
-//        ImageView iv = (ImageView) view.findViewById(R.id.imageView3);
-//
-//        // use string to easily call image from drawable
-////        String mDrawableName = "photo1";
-//        String mDrawableName = "photo" + curDispId;
-//        int imageID = res.getIdentifier(mDrawableName , "drawable", getActivity().getPackageName());
-//        Drawable drawable = res.getDrawable(imageID);
-//
-//        iv.setImageDrawable(drawable);
-
-        // Todo: should this be elsewhere?
-//        jsonParsing(getJsonString());
-
-//        ArrayList<Integer> idList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-//                11, 12, 13, 14, 15, 16, 17, 18, 19, 20));
-
-        // IMPORTANT NOTE: both idList and peopleArrayList should be in increasing order of id
-        //                 in order for this to properly function
-//        selectedArrayList = new ArrayList<People>();
-//        int j = 0;
-//        for (int i = 0; i < idList.size(); i++) {
-////            int j = 0;
-//            while (peopleArrayList.get(j).getId() != idList.get(i)) {
-//                j++;
-//            }
-//            selectedArrayList.add(peopleArrayList.get(j));
-//            j++;
-//        }
 
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
@@ -237,6 +203,23 @@ public class Fragment_Third extends Fragment {
 //        tv_name.setText(curName);
 //        tv_univ.setText(curUniv);
 //        tv_sid.setText(curSid);
+
+        //TIMER
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.setTextView(view.findViewById(R.id.timeNow));
+        stopwatch.start();
+
+        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+
+        stopButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopwatch.stop();
+                stopwatch.start();
+            }
+        });
+
+
 
         return view;
     }

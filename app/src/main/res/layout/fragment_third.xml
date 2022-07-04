@@ -13,15 +13,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <RelativeLayout
+            android:id="@+id/stopwatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timeNow"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="80dp"
+                android:text="TimeRecord"
+                android:textColor="@color/black"
+                android:gravity="right"
+                android:layout_alignRight="@id/stopButton"
+                />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="12dp"
+                android:text="Stop"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+
         <link.fls.swipestack.SwipeStack
             android:id="@+id/container"
             android:layout_width="270dp"
             android:layout_height="270dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:padding="50dp"
             app:stack_rotation="0"
-            app:stack_size="3" />
+            app:stack_size="3"
+            android:layout_below="@id/stopwatch" />
 
     </RelativeLayout>
 

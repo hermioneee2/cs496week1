@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_contact_detail.xml" value="0.161231884057971" />
         <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/activity_main.xml" value="0.12314814814814815" />
-        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/fragment_third.xml" value="0.4" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/fragment_third.xml" value="0.536" />
+        <entry key="..\:/Users/hermi/AndroidStudioProjects/cs496week1/app/src/main/res/layout/names_rv_item.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.107" />
