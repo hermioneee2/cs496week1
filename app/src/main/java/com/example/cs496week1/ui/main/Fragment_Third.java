@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,14 +14,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.example.cs496week1.Commons;
 import com.example.cs496week1.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.TreeSet;
 
 import link.fls.swipestack.SwipeStack;
@@ -153,8 +145,8 @@ public class Fragment_Third extends Fragment {
 
         for (int i = 0; i < Commons.selectedArrayList.size(); i++) {
             selectedNameSet.add(Commons.selectedArrayList.get(i).getName());
-            selectedUnivSet.add(Commons.selectedArrayList.get(i).getUniversity());
-            selectedSidSet.add(Commons.selectedArrayList.get(i).getSt_number());
+            selectedUnivSet.add(Commons.selectedArrayList.get(i).getUniv());
+            selectedSidSet.add(Commons.selectedArrayList.get(i).getSid());
         }
 
         selectedUniqueName = new ArrayList<>(selectedNameSet);
@@ -243,8 +235,8 @@ public class Fragment_Third extends Fragment {
 
     public boolean checkCorrect() {
         return (curName.equals(Commons.selectedArrayList.get(currentPosition).getName()) &
-                curUniv.equals(Commons.selectedArrayList.get(currentPosition).getUniversity()) &
-                curSid.equals(Commons.selectedArrayList.get(currentPosition).getSt_number()));
+                curUniv.equals(Commons.selectedArrayList.get(currentPosition).getUniv()) &
+                curSid.equals(Commons.selectedArrayList.get(currentPosition).getSid()));
     }
 
     //CARD DECK

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
+import com.example.cs496week1.Commons;
 import com.example.cs496week1.ContactDetailActivity;
 import com.example.cs496week1.R;
 
@@ -22,12 +23,10 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
 
     // creating variables for context and array list.
     private Context context;
-    private ArrayList<ContactsModal> contactsModalArrayList;
 
     // creating a constructor
-    public ContactRVAdapter(Context context, ArrayList<ContactsModal> contactsModalArrayList) {
+    public ContactRVAdapter(Context context) {
         this.context = context;
-        this.contactsModalArrayList = contactsModalArrayList;
     }
 
     @NonNull
@@ -35,23 +34,13 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
     public ContactRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // passing our layout file for displaying our card item
         return new ContactRVAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.contacts_rv_item, parent, false));
-
-    }
-
-    // below method is use for filtering data in our array list
-    public void filterList(ArrayList<ContactsModal> filterllist) {
-        // on below line we are passing filtered
-        // array list in our original array list
-        contactsModalArrayList = filterllist;
-        notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactRVAdapter.ViewHolder holder, int position) {
         // getting data from array list in our modal.
-        ContactsModal modal = contactsModalArrayList.get(position);
         // on below line we are setting data to our text view.
-        holder.contactTV.setText(modal.getUserName());
+        holder.contactTV.setText(Commons.peopleArrayList.get(position).getName());
         ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
         // generate random color
         int color = generator.getRandomColor();
@@ -61,7 +50,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
 //                .width(100) // width in px
 //                .height(100) // height in px
                 .setShape(TextDrawable.SHAPE_ROUND)
-                .setText(modal.getUserName().substring(0, 1))
+                .setText(Commons.peopleArrayList.get(position).getName().substring(0, 1))
                 .setColor(color)
                 // as we are building a circular drawable
                 // we are calling a build round method.
@@ -75,8 +64,9 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
             public void onClick(View v) {
                 // on below line we are opening a new activity and passing data to it.
                 Intent i = new Intent(context, ContactDetailActivity.class);
-                i.putExtra("name", modal.getUserName());
-                i.putExtra("contact", modal.getContactNumber());
+                i.putExtra("name", Commons.peopleArrayList.get(holder.getAdapterPosition()).getName());
+                i.putExtra("numb", Commons.peopleArrayList.get(holder.getAdapterPosition()).getNumb());
+                i.putExtra("pSrc", Commons.peopleArrayList.get(holder.getAdapterPosition()).getPSrc());
                 // on below line we are starting a new activity,
                 context.startActivity(i);
             }
@@ -85,7 +75,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return contactsModalArrayList.size();
+        return Commons.peopleArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
