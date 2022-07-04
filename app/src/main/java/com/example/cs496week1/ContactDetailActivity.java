@@ -3,6 +3,8 @@ package com.example.cs496week1;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +17,7 @@ import androidx.core.app.ActivityCompat;
 public class ContactDetailActivity extends AppCompatActivity {
 
     // creating variables for our image view and text view and string. .
-    private String contactName, contactNumber;
+    private String contactName, contactNumb, contactPSrc;
     private TextView contactTV, nameTV;
     private ImageView contactIV, callIV, messageIV;
 
@@ -27,25 +29,32 @@ public class ContactDetailActivity extends AppCompatActivity {
         // on below line we are getting data which
         // we passed in our adapter class with intent.
         contactName = getIntent().getStringExtra("name");
-        contactNumber = getIntent().getStringExtra("contact");
+        contactNumb = getIntent().getStringExtra("numb");
+        contactPSrc = getIntent().getStringExtra("pSrc");
 
         // initializing our views.
+        contactTV = findViewById(R.id.idTVPhone);
         nameTV = findViewById(R.id.idTVName);
         contactIV = findViewById(R.id.idIVContact);
-        contactTV = findViewById(R.id.idTVPhone);
-        nameTV.setText(contactName);
-        // TODO
-        // Add dashes later for phone number
-        contactTV.setText(contactNumber);
         callIV = findViewById(R.id.idIVCall);
         messageIV = findViewById(R.id.idIVMessage);
+
+        contactTV.setText(contactNumb);
+        nameTV.setText(contactName);
+
+        Resources resources = this.getResources();
+        String mDrawableName = "photo" + contactPSrc;
+        int imageID = resources.getIdentifier(mDrawableName , "drawable", this.getPackageName());
+        Drawable drawable = resources.getDrawable(imageID);
+
+        contactIV.setImageDrawable(drawable);
 
         // on below line adding click listener for our calling image view.
         callIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // calling a method to make a call.
-                makeCall(contactNumber);
+                makeCall(contactNumb);
             }
         });
 
@@ -54,7 +63,7 @@ public class ContactDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // calling a method to send message
-                sendMessage(contactNumber);
+                sendMessage(contactNumb);
             }
         });
     }
@@ -63,7 +72,7 @@ public class ContactDetailActivity extends AppCompatActivity {
         // in this method we are calling an intent to send sms.
         // on below line we are passing our contact number.
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
-        intent.putExtra("sms_body", "Enter your messaage");
+        intent.putExtra("sms_body", "Enter your message");
         startActivity(intent);
     }
 

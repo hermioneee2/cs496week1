@@ -109,9 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
                 person.setId(peopleObject.getInt("id"));
                 person.setName(peopleObject.getString("name"));
-                person.setUniversity(peopleObject.getString("university"));
-                person.setSt_number(peopleObject.getString("st_number"));
-                person.setPic_src(peopleObject.getString("pic_src"));
+                person.setUniv(peopleObject.getString("univ"));
+                person.setSid(peopleObject.getString("sid"));
+                person.setNumb(peopleObject.getString("numb"));
+                person.setPSrc(peopleObject.getString("pSrc"));
 
                 Commons.peopleArrayList.add(person);
             }

@@ -9,16 +9,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs496week1.Commons;
 import com.example.cs496week1.R;
-import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
@@ -66,8 +60,8 @@ public class ImageAdapter extends BaseAdapter {
 
         imageView.setImageDrawable(drawable);
         textNameView.setText(Commons.peopleArrayList.get(position).getName());
-        textUnivSidView.setText(Commons.peopleArrayList.get(position).getUniversity() + " " +
-                Commons.peopleArrayList.get(position).getSt_number());
+        textUnivSidView.setText(Commons.peopleArrayList.get(position).getUniv() + " " +
+                Commons.peopleArrayList.get(position).getSid());
 
         int widthPixels = mContext.getResources().getDisplayMetrics().widthPixels;
         itemView.setLayoutParams(new GridView.LayoutParams(widthPixels / 3, widthPixels / 3));

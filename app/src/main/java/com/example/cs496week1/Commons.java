@@ -9,9 +9,10 @@ public class Commons {
     public static class People{
         private Integer id;
         private String name;
-        private String university;
-        private String st_number;
-        private String pic_src;
+        private String univ;
+        private String sid;
+        private String pSrc;
+        private String numb;
 
         public Integer getId() {
             return id;
@@ -29,28 +30,36 @@ public class Commons {
             this.name = name;
         }
 
-        public String getUniversity() {
-            return university;
+        public String getUniv() {
+            return univ;
         }
 
-        public void setUniversity(String university) {
-            this.university = university;
+        public void setUniv(String university) {
+            this.univ = university;
         }
 
-        public String getSt_number() {
-            return st_number;
+        public String getSid() {
+            return sid;
         }
 
-        public void setSt_number(String st_number) {
-            this.st_number = st_number;
+        public void setSid(String sid) {
+            this.sid = sid;
         }
 
-        public String getPic_src() {
-            return pic_src;
+        public String getNumb() {
+            return numb;
         }
 
-        public void setPic_src(String pic_src) {
-            this.pic_src = pic_src;
+        public void setNumb(String numb) {
+            this.numb = numb;
+        }
+
+        public String getPSrc() {
+            return pSrc;
+        }
+
+        public void setPSrc(String pSrc) {
+            this.pSrc = pSrc;
         }
     }
 }
