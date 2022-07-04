@@ -39,7 +39,7 @@ public class WheelView extends FrameLayout {
     /**
      * 分割线颜色
      */
-    private int dividerColor = Color.BLACK;
+    private int dividerColor = getResources().getColor(R.color.purple_200);
     /**
      * 文本大小
      */

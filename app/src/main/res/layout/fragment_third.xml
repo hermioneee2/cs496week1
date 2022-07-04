@@ -11,14 +11,15 @@
     <RelativeLayout
         android:id="@+id/fragmentThirdTop"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="wrap_content">
 
         <link.fls.swipestack.SwipeStack
             android:id="@+id/container"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="270dp"
+            android:layout_height="270dp"
             android:layout_centerInParent="true"
-            android:padding="@dimen/padding_swipestack"
+            android:layout_marginTop="30dp"
+            android:padding="50dp"
             app:stack_rotation="0"
             app:stack_size="3" />
 
