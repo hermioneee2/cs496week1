@@ -26,81 +26,50 @@
     </RelativeLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/fragmentThirdTop"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_marginTop="-20dp"
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.example.cs496week1.ui.main.widget.WheelView
+            android:id="@+id/wv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingRight="40dp"
-            android:paddingLeft="40dp">
+            app:wheelItemCount="4"
+            app:wheelItemSize="28dp"
+            app:wheelDividerSize="30dp"
+            app:wheelGravity="left"
+            app:gravityCoefficient="0.6"
+            app:wheelTextSize="18sp"/>
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical">-->
+        <com.example.cs496week1.ui.main.widget.WheelView
+            android:id="@+id/wv_univ"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:wheelItemCount="4"
+            app:wheelItemSize="28dp"
+            app:wheelDividerSize="30dp"
+            app:wheelGravity="center"
+            app:wheelTextSize="18sp"/>
 
-<!--                <TextView android:id="@+id/tv_name"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:hint="选择的市"/>-->
-
-<!--                <TextView android:id="@+id/tv_univ"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="50dp"-->
-<!--                    android:hint="选择的县"/>-->
-
-<!--                <TextView android:id="@+id/tv_sid"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="50dp"-->
-<!--                    android:hint="选择的县"/>-->
-
-<!--            </LinearLayout>-->
-
-
-            <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_name"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                app:wheelItemCount="4"
-                app:wheelItemSize="28dp"
-                app:wheelDividerSize="30dp"
-                app:wheelGravity="left"
-                app:gravityCoefficient="0.6"
-                app:wheelTextSize="18sp"/>
-
-            <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_univ"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                app:wheelItemCount="4"
-                app:wheelItemSize="28dp"
-                app:wheelDividerSize="30dp"
-                app:wheelGravity="center"
-                app:wheelTextSize="18sp"/>
-
-            <com.example.cs496week1.ui.main.widget.WheelView
-                android:id="@+id/wv_sid"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                app:wheelItemCount="4"
-                app:wheelItemSize="28dp"
-                app:wheelDividerSize="30dp"
-                app:wheelGravity="right"
-                app:gravityCoefficient="0.6"
-                app:wheelTextSize="18sp"/>
-
-        </LinearLayout>
+        <com.example.cs496week1.ui.main.widget.WheelView
+            android:id="@+id/wv_sid"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:wheelItemCount="4"
+            app:wheelItemSize="28dp"
+            app:wheelDividerSize="30dp"
+            app:wheelGravity="right"
+            app:gravityCoefficient="0.6"
+            app:wheelTextSize="18sp"/>
 
     </LinearLayout>
+
 </RelativeLayout>
