@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -82,6 +83,34 @@ public class Fragment_Third extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
+
+        //TIMER
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.setTextView(view.findViewById(R.id.timeNow));
+//        stopwatch.start();
+
+        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+
+        stopButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopwatch.stop();
+                stopwatch.start();
+            }
+        });
+
+        //MODAL
+        Button btnStart = (Button) view.findViewById(R.id.btnStart) ;
+        CardView modal = (CardView) view.findViewById(R.id.modal) ;
+        CardView modalbg = (CardView) view.findViewById(R.id.modalbg) ;
+        btnStart.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopwatch.start();
+                modal.setVisibility(View.GONE);
+                modalbg.setVisibility(View.GONE);
+            }
+        });
 
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
@@ -196,23 +225,6 @@ public class Fragment_Third extends Fragment {
 //        tv_name.setText(curName);
 //        tv_univ.setText(curUniv);
 //        tv_sid.setText(curSid);
-
-        //TIMER
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.setTextView(view.findViewById(R.id.timeNow));
-        stopwatch.start();
-
-        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
-
-        stopButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopwatch.stop();
-                stopwatch.start();
-            }
-        });
-
-
 
         return view;
     }
