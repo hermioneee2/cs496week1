@@ -91,15 +91,15 @@ public class Fragment_Third extends Fragment {
         Stopwatch stopwatch2 = new Stopwatch();
         stopwatch2.setTextView(view.findViewById(R.id.timeRecord));
 
-        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
-
-        stopButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopwatch.stop();
-                stopwatch.start();
-            }
-        });
+//        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+//
+//        stopButton.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                stopwatch.stop();
+//                stopwatch.start();
+//            }
+//        });
 
         //MODAL
         Button btnStart = (Button) view.findViewById(R.id.btnStart) ;
@@ -161,7 +161,7 @@ public class Fragment_Third extends Fragment {
 //                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
 //                timeRecord.setText((int) stopwatch.getElapsedTime());
 //                stopwatch.setTextView(view.findViewById(R.id.timeRecord));
-                numCorrectTV.setText("" + numCorrect);
+                numCorrectTV.setText("" + (20-numCorrect));
                 numCorrect = 0;
             }
         });
