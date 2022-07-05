@@ -117,13 +117,16 @@ public class Fragment_Third extends Fragment {
 
         Button btnRestart = (Button) view.findViewById(R.id.btnRestart) ;
         CardView modalEnding = (CardView) view.findViewById(R.id.modalEnding) ;
-        TextView timeRecord = (TextView) view.findViewById(R.id.timeRecord) ;
+//        TextView timeRecord = (TextView) view.findViewById(R.id.timeRecord) ;
+        CardView modalbg2 = (CardView) view.findViewById(R.id.modalbg2) ;
 
         btnRestart.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 modalEnding.setVisibility(View.GONE);
+                modalbg2.setVisibility(View.GONE);
                 modal.setVisibility(View.VISIBLE);
+                modalbg.setVisibility(View.VISIBLE);
 //                stopwatch.stop();
             }
         });
@@ -151,7 +154,7 @@ public class Fragment_Third extends Fragment {
                 stopwatch.stop();
                 stopwatch2.stop();
 //                modal.setVisibility(View.VISIBLE);
-                modalbg.setVisibility(View.VISIBLE);
+                modalbg2.setVisibility(View.VISIBLE);
                 modalEnding.setVisibility(View.VISIBLE);
 //                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
 //                timeRecord.setText((int) stopwatch.getElapsedTime());

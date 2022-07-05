@@ -18,6 +18,15 @@
         />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/modalbg2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#FFFFFF"
+        android:visibility="gone"
+        />
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/modal"
         android:layout_width="300dp"
         android:layout_height="500dp"
