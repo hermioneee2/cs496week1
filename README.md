@@ -4,9 +4,15 @@
 
 
 > 처음 만난 친구의 이름을 외우기 어렵다구요? GET2KNOW가 도와줄게요!
- 
 
 *GET2KNOW는 여러가지 방식으로 얼굴 사진과 이름, 정보를 매치하여 새로 만난 친구의 이름을 더욱 빠르게 외울수 있도록 도와주는 앱입니다.*
+
+## Authors
+
+이혜림(카이스트 18): [https://github.com/hermioneee2](https://github.com/hermioneee2)
+
+박준현(고려대 20): [https://github.com/channelsucre](https://github.com/channelsucre) 
+
 
 ## 기능 개요
 
@@ -23,11 +29,9 @@
 - **TAB3 QUIZ**
 이름과 사진을 외운 것 같다구요? 퀴즈로 얼마나 외웠는지, 얼마나 빠르게 답할 수 있는지 확인해봐요. 혹시 너무 어렵다면 카드를 스와이프해서 일단 스킵!
 
-## **설치 링크**
-
 APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w68O6G3piLWf/view?usp=sharing
 
-### 권장 사용 환경 및 개발 환경
+## **권장 사용 환경 및 개발 환경**
 
 - OS: Android (8.0 Oreo or Later)
 - Language: JAVA 8
@@ -119,17 +123,7 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 
 - Json에서 parsing된 정보는 Commons라는 클래스를 사용하여 저장하였습니다. 해당 클래스를 import 해주면 다른 activity나 fragment, 심지어 adapter와 같은 특수한 클래스에서도 정보에 접근하기기가 용이하기 때문입니다. 다만 이런 방식은 Commons에 저장한 모든 정보를 메인 메모리에 상주시키기 때문에 프로그램의 반응성이나 성능 면에서 이상적이지 않습니다. 다음에 기회가 있다면 이러한 부분을 더 정교한 방식으로 처리할 방법에 대해 더 조사하여 보고 싶습니다.
 
-## **Authors**
-
-이혜림(카이스트 18): [https://github.com/hermioneee2](https://github.com/hermioneee2)
-
-박준현(고려대 20): [https://github.com/channelsucre](https://github.com/channelsucre) 
-
 ## THANKS TO
-
-References and Libraries
-
----
 
 ### TAB1
 
