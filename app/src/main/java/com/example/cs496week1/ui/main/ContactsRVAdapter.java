@@ -66,7 +66,10 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
                 Intent i = new Intent(context, ContactDetailActivity.class);
                 i.putExtra("name", Commons.peopleArrayList.get(holder.getAdapterPosition()).getName());
                 i.putExtra("numb", Commons.peopleArrayList.get(holder.getAdapterPosition()).getNumb());
-                i.putExtra("pSrc", Commons.peopleArrayList.get(holder.getAdapterPosition()).getPSrc());
+                i.putExtra("id", Commons.peopleArrayList.get(holder.getAdapterPosition()).getId());
+                i.putExtra("univSid", Commons.peopleArrayList.get(
+                        holder.getAdapterPosition()).getUniv() + " " +
+                        Commons.peopleArrayList.get(holder.getAdapterPosition()).getSid());
                 // on below line we are starting a new activity,
                 context.startActivity(i);
             }

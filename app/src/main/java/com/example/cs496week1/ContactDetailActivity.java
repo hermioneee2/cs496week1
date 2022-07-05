@@ -16,9 +16,10 @@ import androidx.core.app.ActivityCompat;
 
 public class ContactDetailActivity extends AppCompatActivity {
 
-    // creating variables for our image view and text view and string. .
-    private String contactName, contactNumb, contactPSrc;
-    private TextView contactTV, nameTV;
+    // creating variables for our image view and text view and string.
+    private Integer contactId;
+    private String contactName, contactNumb, contactUnivSid;
+    private TextView contactTV, nameTV, univSidTV;
     private ImageView contactIV, callIV, messageIV;
 
     @Override
@@ -30,7 +31,8 @@ public class ContactDetailActivity extends AppCompatActivity {
         // we passed in our adapter class with intent.
         contactName = getIntent().getStringExtra("name");
         contactNumb = getIntent().getStringExtra("numb");
-        contactPSrc = getIntent().getStringExtra("pSrc");
+        contactId = getIntent().getIntExtra("id", 1);
+        contactUnivSid = getIntent().getStringExtra("univSid");
 
         // initializing our views.
         contactTV = findViewById(R.id.idTVPhone);
@@ -38,12 +40,14 @@ public class ContactDetailActivity extends AppCompatActivity {
         contactIV = findViewById(R.id.idIVContact);
         callIV = findViewById(R.id.idIVCall);
         messageIV = findViewById(R.id.idIVMessage);
+        univSidTV = findViewById(R.id.idTVUnivSid);
 
         contactTV.setText(contactNumb);
         nameTV.setText(contactName);
+        univSidTV.setText(contactUnivSid);
 
         Resources resources = this.getResources();
-        String mDrawableName = "photo" + contactPSrc;
+        String mDrawableName = "photo" + contactId;
         int imageID = resources.getIdentifier(mDrawableName , "drawable", this.getPackageName());
         Drawable drawable = resources.getDrawable(imageID);
 

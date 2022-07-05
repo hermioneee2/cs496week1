@@ -6,18 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <RelativeLayout
         android:id="@+id/fragmentThirdTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <RelativeLayout
             android:id="@+id/stopwatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <TextView
                 android:id="@+id/timeNow"
@@ -39,7 +42,8 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="12dp"
                 android:text="Stop"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                />
         </RelativeLayout>
 
 
@@ -51,7 +55,8 @@
             android:padding="50dp"
             app:stack_rotation="0"
             app:stack_size="3"
-            android:layout_below="@id/stopwatch" />
+            android:layout_below="@id/stopwatch"
+            />
 
     </RelativeLayout>
 
@@ -75,7 +80,8 @@
             app:wheelDividerSize="30dp"
             app:wheelGravity="left"
             app:gravityCoefficient="0.6"
-            app:wheelTextSize="18sp"/>
+            app:wheelTextSize="18sp"
+            />
 
         <com.example.cs496week1.ui.main.widget.WheelView
             android:id="@+id/wv_univ"
@@ -86,7 +92,8 @@
             app:wheelItemSize="28dp"
             app:wheelDividerSize="30dp"
             app:wheelGravity="center"
-            app:wheelTextSize="18sp"/>
+            app:wheelTextSize="18sp"
+            />
 
         <com.example.cs496week1.ui.main.widget.WheelView
             android:id="@+id/wv_sid"
@@ -98,7 +105,8 @@
             app:wheelDividerSize="30dp"
             app:wheelGravity="right"
             app:gravityCoefficient="0.6"
-            app:wheelTextSize="18sp"/>
+            app:wheelTextSize="18sp"
+            />
 
     </LinearLayout>
 

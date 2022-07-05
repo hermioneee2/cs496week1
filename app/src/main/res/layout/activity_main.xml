@@ -19,6 +19,7 @@
             app:layout_constraintBottom_toTopOf="@id/container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:background="#e6f7ff"
             />
 
         <androidx.viewpager.widget.ViewPager
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tabs"
+            android:background="#e6f7ff"
             />
 
     </RelativeLayout>
