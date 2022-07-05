@@ -2,6 +2,7 @@ package com.example.cs496week1.ui.main;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +88,8 @@ public class Fragment_Third extends Fragment {
         //TIMER
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.setTextView(view.findViewById(R.id.timeNow));
-//        stopwatch.start();
+        Stopwatch stopwatch2 = new Stopwatch();
+        stopwatch2.setTextView(view.findViewById(R.id.timeRecord));
 
         Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
 
@@ -107,6 +109,7 @@ public class Fragment_Third extends Fragment {
             @Override
             public void onClick(View view) {
                 stopwatch.start();
+                stopwatch2.start();
                 modal.setVisibility(View.GONE);
                 modalbg.setVisibility(View.GONE);
             }
@@ -114,12 +117,14 @@ public class Fragment_Third extends Fragment {
 
         Button btnRestart = (Button) view.findViewById(R.id.btnRestart) ;
         CardView modalEnding = (CardView) view.findViewById(R.id.modalEnding) ;
+        TextView timeRecord = (TextView) view.findViewById(R.id.timeRecord) ;
 
         btnRestart.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 modalEnding.setVisibility(View.GONE);
                 modal.setVisibility(View.VISIBLE);
+//                stopwatch.stop();
             }
         });
 
@@ -144,9 +149,14 @@ public class Fragment_Third extends Fragment {
                 cardStack.resetStack();
                 currentPosition = 0;
                 stopwatch.stop();
+                stopwatch2.stop();
 //                modal.setVisibility(View.VISIBLE);
                 modalbg.setVisibility(View.VISIBLE);
                 modalEnding.setVisibility(View.VISIBLE);
+//                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
+//                timeRecord.setText((int) stopwatch.getElapsedTime());
+//                stopwatch.setTextView(view.findViewById(R.id.timeRecord));
+
             }
         });
 
