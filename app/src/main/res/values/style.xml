@@ -12,4 +12,7 @@
         <item name="android:checkboxStyle">@style/customCheckboxFontStyle</item>
 
     </style>
+    <style name="tabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/leferibasebold</item>
+    </style>
 </resources>
