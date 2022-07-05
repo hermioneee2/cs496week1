@@ -11,9 +11,9 @@
 ## 기능 개요
 
 <p float="left">
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="300" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg" width="300" /> 
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg" width="300" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="200" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg" width="200" /> 
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg" width="200" />
 </p>
 
 - **TAB1 CONTACTS**
@@ -37,8 +37,8 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 ## TAB1 CONTACTS
 
 <p float="left">
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know%201.jpg" width="400" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193543_Get2Know.jpg" width="400" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know%201.jpg" width="300" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193543_Get2Know.jpg" width="300" />
 </p>
 
 ### 주요 기능
@@ -59,9 +59,9 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 ## TAB2 GALLERY
 
 <p float="left">
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193550_Get2Know.jpg" width="300" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know%201.jpg" width="300" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193612_Get2Know.jpg" width="300" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193550_Get2Know.jpg" width="200" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know%201.jpg" width="200" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193612_Get2Know.jpg" width="200" />
 </p>
 
 ### 주요 기능
@@ -83,9 +83,9 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 ## TAB3 QUIZ
 
 <p float="left">
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193620_Get2Know.jpg" width="300" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know%201.jpg" width="300" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193936_Get2Know.jpg" width="300" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193620_Get2Know.jpg" width="200" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know%201.jpg" width="200" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193936_Get2Know.jpg" width="200" />
 </p>
 
 ### 주요 기능
