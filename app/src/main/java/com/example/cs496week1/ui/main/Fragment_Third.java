@@ -2,7 +2,6 @@ package com.example.cs496week1.ui.main;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +29,7 @@ public class Fragment_Third extends Fragment {
 //    ArrayList<People> selectedArrayList;
     // position of currently displayed item
     private int currentPosition;
+    private int numCorrect;
 
     //Slider
     private RecyclerView nameRV;
@@ -119,6 +119,7 @@ public class Fragment_Third extends Fragment {
         CardView modalEnding = (CardView) view.findViewById(R.id.modalEnding) ;
 //        TextView timeRecord = (TextView) view.findViewById(R.id.timeRecord) ;
         CardView modalbg2 = (CardView) view.findViewById(R.id.modalbg2) ;
+        TextView numCorrectTV = (TextView) view.findViewById(R.id.numCorrect) ;
 
         btnRestart.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -135,16 +136,17 @@ public class Fragment_Third extends Fragment {
         cardStack = (SwipeStack) view.findViewById(R.id.container);
         setCardStackAdapter(view);
         currentPosition = 0;
+        numCorrect = 0;
 
         cardStack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
             public void onViewSwipedToLeft(int position) {
-                  currentPosition = position + 1;
+                currentPosition = position + 1;
             }
 
             @Override
             public void onViewSwipedToRight(int position) {
-                  currentPosition = position + 1;
+                currentPosition = position + 1;
             }
 
             @Override
@@ -159,7 +161,8 @@ public class Fragment_Third extends Fragment {
 //                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
 //                timeRecord.setText((int) stopwatch.getElapsedTime());
 //                stopwatch.setTextView(view.findViewById(R.id.timeRecord));
-
+                numCorrectTV.setText("" + numCorrect);
+                numCorrect = 0;
             }
         });
 
@@ -202,6 +205,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
@@ -223,6 +227,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
@@ -243,6 +248,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
