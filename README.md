@@ -13,6 +13,12 @@
 
 ---
 
+<p float="left">
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="100" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg" width="100" /> 
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg" width="100" />
+</p>
+
 ![Screenshot_20220705-193534_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg)
 
 ![Screenshot_20220705-193556_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg)
