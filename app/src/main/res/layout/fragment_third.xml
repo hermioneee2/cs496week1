@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="FACE MATCH GAME"
+                android:text="FACE MATCH QUIZ"
                 android:textColor="@color/purple_500"
                 android:textSize="18sp"
                 android:fontFamily="@font/leferibasebold"
