@@ -128,7 +128,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
         // in this method we are calling an intent to send sms.
         // on below line we are passing our contact number.
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
-        intent.putExtra("sms_body", "반가워요, " + recipient + "!");
+        intent.putExtra("sms_body", "Hello, " + recipient + "!");
         context.startActivity(intent);
     }
 

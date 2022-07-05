@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +29,7 @@ public class Fragment_Third extends Fragment {
 //    ArrayList<People> selectedArrayList;
     // position of currently displayed item
     private int currentPosition;
+    private int numCorrect;
 
     //Slider
     private RecyclerView nameRV;
@@ -83,26 +85,84 @@ public class Fragment_Third extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
+        //TIMER
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.setTextView(view.findViewById(R.id.timeNow));
+        Stopwatch stopwatch2 = new Stopwatch();
+        stopwatch2.setTextView(view.findViewById(R.id.timeRecord));
+
+        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+
+        stopButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopwatch.stop();
+                stopwatch.start();
+            }
+        });
+
+        //MODAL
+        Button btnStart = (Button) view.findViewById(R.id.btnStart) ;
+        CardView modal = (CardView) view.findViewById(R.id.modal) ;
+        CardView modalbg = (CardView) view.findViewById(R.id.modalbg) ;
+        btnStart.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopwatch.start();
+                stopwatch2.start();
+                modal.setVisibility(View.GONE);
+                modalbg.setVisibility(View.GONE);
+            }
+        });
+
+        Button btnRestart = (Button) view.findViewById(R.id.btnRestart) ;
+        CardView modalEnding = (CardView) view.findViewById(R.id.modalEnding) ;
+//        TextView timeRecord = (TextView) view.findViewById(R.id.timeRecord) ;
+        CardView modalbg2 = (CardView) view.findViewById(R.id.modalbg2) ;
+        TextView numCorrectTV = (TextView) view.findViewById(R.id.numCorrect) ;
+
+        btnRestart.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                modalEnding.setVisibility(View.GONE);
+                modalbg2.setVisibility(View.GONE);
+                modal.setVisibility(View.VISIBLE);
+                modalbg.setVisibility(View.VISIBLE);
+//                stopwatch.stop();
+            }
+        });
+
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
         setCardStackAdapter(view);
         currentPosition = 0;
+        numCorrect = 0;
 
         cardStack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
             public void onViewSwipedToLeft(int position) {
-                  currentPosition = position + 1;
+                currentPosition = position + 1;
             }
 
             @Override
             public void onViewSwipedToRight(int position) {
-                  currentPosition = position + 1;
+                currentPosition = position + 1;
             }
 
             @Override
             public void onStackEmpty() {
                 cardStack.resetStack();
                 currentPosition = 0;
+                stopwatch.stop();
+                stopwatch2.stop();
+//                modal.setVisibility(View.VISIBLE);
+                modalbg2.setVisibility(View.VISIBLE);
+                modalEnding.setVisibility(View.VISIBLE);
+//                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
+//                timeRecord.setText((int) stopwatch.getElapsedTime());
+//                stopwatch.setTextView(view.findViewById(R.id.timeRecord));
+                numCorrectTV.setText("" + numCorrect);
+                numCorrect = 0;
             }
         });
 
@@ -142,6 +202,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
@@ -161,6 +222,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
@@ -179,6 +241,7 @@ public class Fragment_Third extends Fragment {
                     } else {
                         cardStack.swipeTopViewToLeft();
                     }
+                    numCorrect++;
                 }
             }
         });
@@ -187,20 +250,20 @@ public class Fragment_Third extends Fragment {
         curUniv = univAdapter.getItem(0);
         curSid = sidAdapter.getItem(0);
 
-        //TIMER
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.setTextView(view.findViewById(R.id.timeNow));
-        stopwatch.start();
-
-        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
-
-        stopButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopwatch.stop();
-                stopwatch.start();
-            }
-        });
+//        //TIMER
+//        Stopwatch stopwatch = new Stopwatch();
+//        stopwatch.setTextView(view.findViewById(R.id.timeNow));
+//        stopwatch.start();
+//
+//        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+//
+//        stopButton.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                stopwatch.stop();
+//                stopwatch.start();
+//            }
+//        });
 
         return view;
     }
