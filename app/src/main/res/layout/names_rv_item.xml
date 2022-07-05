@@ -15,3 +15,4 @@
     android:textAlignment="center"
     android:fontFamily="@font/leferibaseregular"
     />
+<!--Todo: font for wheelView-->
