@@ -51,7 +51,7 @@
                 android:textColor="@color/purple_500"
                 android:textSize="18sp"
                 android:fontFamily="@font/leferibasebold"
-                android:layout_marginTop="130dp"
+                android:layout_marginTop="120dp"
                 />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/imageName"
-                android:text="Match your friend's name with the corresponding information AS FAST AS YOU CAN. \n\nSee how fast you can go! \n\nAre you ready?"
+                android:text="Match your friend's name with the corresponding information AS FAST AS YOU CAN. \n\nHint: You can skip by \nswiping the cards away. \n\nAre you ready?"
                 android:textColor="#403D3D"
                 android:textSize="13sp"
                 android:gravity="center"
