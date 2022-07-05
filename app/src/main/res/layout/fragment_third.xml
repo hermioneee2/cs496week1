@@ -200,30 +200,41 @@
                 android:id="@+id/stopwatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/recordText"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/leferibaseregular"
+                    android:text="RECORD "
+                    android:layout_marginTop="23dp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/timeNow"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
-                    android:layout_alignEnd="@id/stopButton"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="90dp"
                     android:fontFamily="@font/leferibaseregular"
-                    android:gravity="end"
-                    android:text="TimeRecord"
-                    android:textColor="@color/black" />
+                    android:gravity="right"
+                    android:text="00:00:00"
+                    android:textSize="20dp"
+                    android:textColor="@color/purple_500"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="60dp" />
 
-                <Button
-                    android:id="@+id/stopButton"
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="12dp"
-                    android:fontFamily="@font/leferibasebold"
-                    android:text="Reset"
-                    android:textSize="11sp" />
+<!--                <Button-->
+<!--                    android:id="@+id/stopButton"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:layout_marginEnd="12dp"-->
+<!--                    android:fontFamily="@font/leferibasebold"-->
+<!--                    android:text="Reset"-->
+<!--                    android:textSize="11sp" />-->
             </RelativeLayout>
 
 
