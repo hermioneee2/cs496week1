@@ -155,8 +155,7 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 - 탭 전환 방식
 [https://4whomtbts.tistory.com/49](https://4whomtbts.tistory.com/49)
 - JSON 파싱 및 기본 디스플레이
-    
-    [https://lktprogrammer.tistory.com/175](https://lktprogrammer.tistory.com/175)
+[https://lktprogrammer.tistory.com/175](https://lktprogrammer.tistory.com/175)
     
 
 ### COPYRIGHT
