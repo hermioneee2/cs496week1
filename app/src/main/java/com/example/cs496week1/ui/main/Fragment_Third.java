@@ -128,16 +128,13 @@ public class Fragment_Third extends Fragment {
 //        tv_univ = (TextView) view.findViewById(R.id.tv_univ);
 //        tv_sid = (TextView) view.findViewById(R.id.tv_sid);
 
-        /* 市滑轮控件 */
         nameAdapter = new NameAdapter();
         wv_name.setAdapter(nameAdapter);
         wv_name.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curName = nameAdapter.getItem(index);
-//                tv_name.setText("市: "+nameAdapter.getItem(index));
                 if (checkCorrect()) {
-                    // Todo: add functionality here
                     // This part handles the case of full match
 //                    currentPosition++;
                     if (currentPosition % 2 == 0) {
@@ -149,7 +146,6 @@ public class Fragment_Third extends Fragment {
             }
         });
 
-        /* 区滑轮控件 */
         univAdapter = new UnivAdapter();
         wv_univ.setAdapter(univAdapter);
         wv_univ.setOnItemSelectedListener(new WheelView.OnItemSelectedListener() {
@@ -158,7 +154,6 @@ public class Fragment_Third extends Fragment {
                 curUniv = univAdapter.getItem(index);
 //                tv_univ.setText("县: "+univAdapter.getItem(index));
                 if (checkCorrect()) {
-                    // Todo: add functionality here
                     // This part handles the case of full match
 //                    currentPosition++;
                     if (currentPosition % 2 == 0) {
@@ -176,9 +171,7 @@ public class Fragment_Third extends Fragment {
             @Override
             public void onItemSelected(WheelView wv, int index) {
                 curSid = sidAdapter.getItem(index);
-//                tv_sid.setText("县: "+sidAdapter.getItem(index));
                 if (checkCorrect()) {
-                    // Todo: add functionality here
                     // This part handles the case of full match
 //                    currentPosition++;
                     if (currentPosition % 2 == 0) {
@@ -193,9 +186,6 @@ public class Fragment_Third extends Fragment {
         curName = nameAdapter.getItem(0);
         curUniv = univAdapter.getItem(0);
         curSid = sidAdapter.getItem(0);
-//        tv_name.setText(curName);
-//        tv_univ.setText(curUniv);
-//        tv_sid.setText(curSid);
 
         //TIMER
         Stopwatch stopwatch = new Stopwatch();
@@ -211,8 +201,6 @@ public class Fragment_Third extends Fragment {
                 stopwatch.start();
             }
         });
-
-
 
         return view;
     }

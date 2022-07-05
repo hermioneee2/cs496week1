@@ -29,7 +29,6 @@ public class ImageAdapter extends BaseAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    // Todo: are the following three properly defined?
     @Override
     public int getCount() {
         return Commons.peopleArrayList.size();
