@@ -71,6 +71,67 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modalEnding"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="125dp"
+        app:cardElevation="20dp"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:id="@+id/imageRV2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_500"
+            >
+
+            <TextView
+                android:id="@+id/imageName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="YOUR RECORD"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:fontFamily="@font/leferibasebold"
+                android:layout_marginTop="70dp"
+                />
+
+            <TextView
+                android:id="@+id/imageUnivSid2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageName2"
+                android:text="00:00.00"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/leferibaseregular"
+                />
+
+            <Button
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageUnivSid2"
+                android:text="Try Again"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/leferibasebold"
+                android:backgroundTint="@color/white"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
     <RelativeLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"

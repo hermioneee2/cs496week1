@@ -112,6 +112,17 @@ public class Fragment_Third extends Fragment {
             }
         });
 
+        Button btnRestart = (Button) view.findViewById(R.id.btnRestart) ;
+        CardView modalEnding = (CardView) view.findViewById(R.id.modalEnding) ;
+
+        btnRestart.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                modalEnding.setVisibility(View.GONE);
+                modal.setVisibility(View.VISIBLE);
+            }
+        });
+
         //CARD DECK
         cardStack = (SwipeStack) view.findViewById(R.id.container);
         setCardStackAdapter(view);
@@ -132,6 +143,10 @@ public class Fragment_Third extends Fragment {
             public void onStackEmpty() {
                 cardStack.resetStack();
                 currentPosition = 0;
+                stopwatch.stop();
+//                modal.setVisibility(View.VISIBLE);
+                modalbg.setVisibility(View.VISIBLE);
+                modalEnding.setVisibility(View.VISIBLE);
             }
         });
 
