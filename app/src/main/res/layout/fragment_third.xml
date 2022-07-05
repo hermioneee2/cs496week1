@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,107 +9,260 @@
     tools:context=".MainActivity"
     >
 
-    <RelativeLayout
-        android:id="@+id/fragmentThirdTop"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modalbg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#9E515050"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modalbg2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#FFFFFF"
+        android:visibility="gone"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modal"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         >
 
         <RelativeLayout
-            android:id="@+id/stopwatch"
+            android:id="@+id/imageRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_border"
             >
 
             <TextView
-                android:id="@+id/timeNow"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="90dp"
-                android:text="TimeRecord"
-                android:textColor="@color/black"
-                android:gravity="end"
-                android:layout_alignEnd="@id/stopButton"
+                android:id="@+id/imageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="FACE MATCH GAME"
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:fontFamily="@font/leferibasebold"
+                android:layout_marginTop="130dp"
+                />
+
+            <TextView
+                android:id="@+id/imageUnivSid"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageName"
+                android:text="Match your friend's name with the corresponding information AS FAST AS YOU CAN. \n\nSee how fast you can go! \n\nAre you ready?"
+                android:textColor="#403D3D"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/leferibaseregular"
                 />
 
             <Button
-                android:id="@+id/stopButton"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="12dp"
-                android:text="Reset"
-                android:textSize="11sp"
-                android:fontFamily="@font/leferibasebold"
-                />
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="350dp"
+                android:layout_centerHorizontal="true"
+                android:text="START GAME" />
+
         </RelativeLayout>
 
+    </androidx.cardview.widget.CardView>
 
-        <link.fls.swipestack.SwipeStack
-            android:id="@+id/container"
-            android:layout_width="270dp"
-            android:layout_height="270dp"
-            android:layout_centerHorizontal="true"
-            android:padding="50dp"
-            app:stack_rotation="0"
-            app:stack_size="3"
-            android:layout_below="@id/stopwatch"
-            />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fragmentThirdTop"
-        android:orientation="horizontal"
-        android:paddingRight="40dp"
-        android:paddingLeft="40dp"
-        android:layout_marginTop="-20dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modalEnding"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="125dp"
+        app:cardElevation="20dp"
+        android:visibility="gone"
         >
 
-        <com.example.cs496week1.ui.main.widget.WheelView
-            android:id="@+id/wv_name"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <RelativeLayout
+            android:id="@+id/imageRV2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_500"
+            >
+
+            <TextView
+                android:id="@+id/imageName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="YOUR RECORD"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:fontFamily="@font/leferibasebold"
+                android:layout_marginTop="70dp"
+                />
+
+            <TextView
+                android:id="@+id/timeRecord"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageName2"
+                android:text="00:00.00"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/leferibaseregular"
+                />
+
+            <Button
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/timeRecord"
+                android:text="Try Again"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/leferibasebold"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/numCorrect"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btnRestart"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/leferibaseregular"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        >
+
+        <RelativeLayout
+            android:id="@+id/fragmentThirdTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/stopwatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/timeNow"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_alignEnd="@id/stopButton"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="90dp"
+                    android:fontFamily="@font/leferibaseregular"
+                    android:gravity="end"
+                    android:text="TimeRecord"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/stopButton"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/leferibasebold"
+                    android:text="Reset"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+
+
+            <link.fls.swipestack.SwipeStack
+                android:id="@+id/container"
+                android:layout_width="270dp"
+                android:layout_height="270dp"
+                android:layout_below="@id/stopwatch"
+                android:layout_centerHorizontal="true"
+                android:padding="50dp"
+                app:stack_rotation="0"
+                app:stack_size="3" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:wheelItemCount="4"
-            app:wheelItemSize="28dp"
-            app:wheelDividerSize="30dp"
-            app:wheelGravity="left"
-            app:gravityCoefficient="0.6"
-            app:wheelTextSize="18sp"
-            />
+            android:layout_below="@id/fragmentThirdTop"
+            android:orientation="horizontal"
+            android:paddingRight="40dp"
+            android:paddingLeft="40dp"
+            android:layout_marginTop="-20dp"
+            >
 
-        <com.example.cs496week1.ui.main.widget.WheelView
-            android:id="@+id/wv_univ"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            app:wheelItemCount="4"
-            app:wheelItemSize="28dp"
-            app:wheelDividerSize="30dp"
-            app:wheelGravity="center"
-            app:wheelTextSize="18sp"
-            />
+            <com.example.cs496week1.ui.main.widget.WheelView
+                android:id="@+id/wv_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:wheelItemCount="4"
+                app:wheelItemSize="28dp"
+                app:wheelDividerSize="30dp"
+                app:wheelGravity="left"
+                app:gravityCoefficient="0.6"
+                app:wheelTextSize="18sp"
+                />
 
-        <com.example.cs496week1.ui.main.widget.WheelView
-            android:id="@+id/wv_sid"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            app:wheelItemCount="4"
-            app:wheelItemSize="28dp"
-            app:wheelDividerSize="30dp"
-            app:wheelGravity="right"
-            app:gravityCoefficient="0.6"
-            app:wheelTextSize="18sp"
-            />
+            <com.example.cs496week1.ui.main.widget.WheelView
+                android:id="@+id/wv_univ"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:wheelItemCount="4"
+                app:wheelItemSize="28dp"
+                app:wheelDividerSize="30dp"
+                app:wheelGravity="center"
+                app:wheelTextSize="18sp"
+                />
 
-    </LinearLayout>
+            <com.example.cs496week1.ui.main.widget.WheelView
+                android:id="@+id/wv_sid"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:wheelItemCount="4"
+                app:wheelItemSize="28dp"
+                app:wheelDividerSize="30dp"
+                app:wheelGravity="right"
+                app:gravityCoefficient="0.6"
+                app:wheelTextSize="18sp"
+                />
 
-</RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>
