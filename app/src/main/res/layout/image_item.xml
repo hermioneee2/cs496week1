@@ -50,46 +50,57 @@
 
 <!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/imageRV"
+    <!-- Back Layout Goes Here -->
+    <com.example.cs496week1.ui.main.widget.RoundedCornerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@drawable/bg_border"
         >
 
-        <TextView
-            android:id="@+id/imageName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Name"
-            android:textColor="@color/purple_500"
-            android:textSize="18sp"
-            android:fontFamily="@font/leferibaseregular"
-            />
+        <RelativeLayout
+            android:id="@+id/imageRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/bg_border"
+            >
 
-        <TextView
-            android:id="@+id/imageUnivSid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/imageName"
-            android:text="Univ Sid"
-            android:textColor="#403D3D"
-            android:textSize="13sp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/leferibaseregular"
-            />
+            <TextView
+                android:id="@+id/imageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Name"
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:fontFamily="@font/leferibaseregular"
+                />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/imageUnivSid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageName"
+                android:text="Univ Sid"
+                android:textColor="#403D3D"
+                android:textSize="13sp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/leferibaseregular"
+                />
+
+        </RelativeLayout>
+
+    </com.example.cs496week1.ui.main.widget.RoundedCornerLayout>
 
     <!-- Front Layout Goes Here -->
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageFront"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        />
+        app:riv_corner_radius="10dp"
+        >
+
+    </com.makeramen.roundedimageview.RoundedImageView>
 
 </com.wajahatkarim3.easyflipview.EasyFlipView>

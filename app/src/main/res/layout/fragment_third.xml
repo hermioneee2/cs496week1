@@ -27,23 +27,23 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginEnd="90dp"
                 android:text="TimeRecord"
                 android:textColor="@color/black"
-                android:gravity="right"
-                android:layout_alignRight="@id/stopButton"
+                android:gravity="end"
+                android:layout_alignEnd="@id/stopButton"
                 android:fontFamily="@font/leferibaseregular"
                 />
 
             <Button
                 android:id="@+id/stopButton"
-                android:layout_width="70dp"
+                android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="4dp"
-                android:layout_marginRight="12dp"
-                android:text="Stop"
-                android:textSize="10dp"
+                android:layout_marginEnd="12dp"
+                android:text="Reset"
+                android:textSize="11sp"
                 android:fontFamily="@font/leferibasebold"
                 />
         </RelativeLayout>

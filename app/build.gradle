@@ -47,4 +47,6 @@ dependencies {
     implementation 'com.github.flschweiger:SwipeStack:0.3.0'
     implementation 'com.wajahatkarim:EasyFlipView:3.0.3'
     implementation 'com.github.yashovardhan99:TimeIt:1.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

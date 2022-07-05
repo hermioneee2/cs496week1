@@ -1,7 +1,12 @@
 package com.example.cs496week1.ui.main;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
@@ -41,23 +47,25 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
         // getting data from array list in our modal.
         // on below line we are setting data to our text view.
         holder.contactTV.setText(Commons.peopleArrayList.get(position).getName());
-        ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
-        // generate random color
-        int color = generator.getRandomColor();
 
-        // below text drawable is a circular.
-        TextDrawable drawable2 = new TextDrawable.Builder()
-//                .width(100) // width in px
-//                .height(100) // height in px
-                .setShape(TextDrawable.SHAPE_ROUND)
-                .setText(Commons.peopleArrayList.get(position).getName().substring(0, 1))
-                .setColor(color)
-                // as we are building a circular drawable
-                // we are calling a build round method.
-                // in that method we are passing our text and color.
-                .build();
+
+//        // generate random color
+//        ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
+//        int color = generator.getRandomColor();
+//        // circular drawable with random color and first text
+//        TextDrawable drawable = new TextDrawable.Builder()
+//                .setShape(TextDrawable.SHAPE_ROUND)
+//                .setText(Commons.peopleArrayList.get(position).getName().substring(0, 1))
+//                .setColor(color)
+//                .build();
+
+        Resources resources = context.getResources();
+        String mDrawableName = "photo" + Commons.peopleArrayList.get(position).getId();
+        int imageID = resources.getIdentifier(mDrawableName , "drawable", context.getPackageName());
+        Drawable drawable = resources.getDrawable(imageID);
+
         // setting image to our image view on below line.
-        holder.contactIV.setImageDrawable(drawable2);
+        holder.contactIV.setImageDrawable(drawable);
         // on below line we are adding on click listener to our item of recycler view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +82,24 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
                 context.startActivity(i);
             }
         });
+
+        String contactNumb = Commons.peopleArrayList.get(position).getNumb();
+
+        holder.callIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calling a method to make a call.
+                makeCall(contactNumb);
+            }
+        });
+
+        holder.messageIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calling a method to send message
+                sendMessage(contactNumb);
+            }
+        });
     }
 
     @Override
@@ -84,7 +110,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder {
         // on below line creating a variable
         // for our image view and text view.
-        private ImageView contactIV;
+        private ImageView contactIV, callIV, messageIV;
         private TextView contactTV;
 
         public ViewHolder(@NonNull View itemView) {
@@ -92,7 +118,32 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
             // initializing our image view and text view.
             contactIV = itemView.findViewById(R.id.idIVContact);
             contactTV = itemView.findViewById(R.id.idTVContactName);
+            callIV = itemView.findViewById(R.id.idIVContactsCall);
+            messageIV = itemView.findViewById(R.id.idIVContactsMessage);
         }
+    }
+
+    private void sendMessage(String contactNumber) {
+        // in this method we are calling an intent to send sms.
+        // on below line we are passing our contact number.
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
+        intent.putExtra("sms_body", "Enter your message");
+        context.startActivity(intent);
+    }
+
+    private void makeCall(String contactNumber) {
+        // this method is called for making a call.
+        // on below line we are calling an intent to make a call.
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        // on below line we are setting data to it.
+        callIntent.setData(Uri.parse("tel:" + contactNumber));
+        // on below line we are checking if the calling permissions are granted not.
+        if (ActivityCompat.checkSelfPermission(context,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        // at last we are starting activity.
+        context.startActivity(callIntent);
     }
 }
 

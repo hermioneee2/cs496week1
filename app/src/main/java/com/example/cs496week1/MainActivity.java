@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
         String json = "";
 
         try {
+            // IMPORTANT NOTE:
+            // THE NUMBERS IN People.json ARE RANDOM STRANGERS
+            // PLEASE DO NOT ATTEMPT TO CONTACT THEM
             InputStream is = this.getAssets().open("People.json");
             int fileSize = is.available();
 

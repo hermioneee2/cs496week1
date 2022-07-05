@@ -64,7 +64,6 @@ public class WheelView extends FrameLayout {
      * 对齐方式
      */
     private int gravity = WheelDecoration.GRAVITY_CENTER;
-
     /**
      * recyclerView
      */

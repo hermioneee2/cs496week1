@@ -35,15 +35,15 @@ public class ContactDetailActivity extends AppCompatActivity {
         contactUnivSid = getIntent().getStringExtra("univSid");
 
         // initializing our views.
-        contactTV = findViewById(R.id.idTVPhone);
-        nameTV = findViewById(R.id.idTVName);
         contactIV = findViewById(R.id.idIVContact);
+        nameTV = findViewById(R.id.idTVName);
         callIV = findViewById(R.id.idIVCall);
+        contactTV = findViewById(R.id.idTVPhone);
         messageIV = findViewById(R.id.idIVMessage);
         univSidTV = findViewById(R.id.idTVUnivSid);
 
-        contactTV.setText(contactNumb);
         nameTV.setText(contactName);
+        contactTV.setText(contactNumb);
         univSidTV.setText(contactUnivSid);
 
         Resources resources = this.getResources();
