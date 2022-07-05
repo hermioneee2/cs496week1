@@ -162,3 +162,8 @@ APK 다운로드 링크: https://drive.google.com/file/d/1sNrTm6fw4PU2MBzwzOM6w6
 
 - 아이콘 이미지 
 [https://flyclipart.com/download-png#friend-interface-male-icon-with-png-and-vector-format-for-free-796177.png](https://flyclipart.com/download-png#friend-interface-male-icon-with-png-and-vector-format-for-free-796177.png)
+
+- 연락처 정보
+연락처 정보는 임의로 입력하였으니 해당 번호로 전화를 걸지 말아 주시기를 부탁드립니다.
+만일 문제가 되는 경우 문의주시면 조치를 취하도록 하겠습니다.
+감사합니다.
