@@ -14,16 +14,10 @@
 ---
 
 <p float="left">
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="100" />
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg" width="100" /> 
-  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg" width="100" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="300" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg" width="300" /> 
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg" width="300" />
 </p>
-
-![Screenshot_20220705-193534_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg)
-
-![Screenshot_20220705-193556_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know.jpg)
-
-![Screenshot_20220705-193736_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193736_Get2Know.jpg)
 
 - **TAB1 CONTACTS**
 친구들의 이름과 연락처를 보여줘요. 학교나 학번과 같은 기본 정보를 확인할 수 있고 전화나 문자를 걸 수도 있어요!
@@ -48,7 +42,10 @@ APK 다운로드 링크:
 ## TAB1 CONTACTS
 
 ---
-
+<p float="left">
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know%201.jpg" width="400" />
+  <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193543_Get2Know.jpg" width="400" />
+</p>
 ![Screenshot_20220705-193534_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know%201.jpg)
 
 ![Screenshot_20220705-193543_Get2Know.jpg](README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193543_Get2Know.jpg)
