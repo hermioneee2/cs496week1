@@ -14,7 +14,7 @@
         android:layout_height="140dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="100dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="20dp"
         >
@@ -32,9 +32,21 @@
     <View
         android:id="@+id/idVContactTop"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@color/purple_200"
-        />
+        android:layout_height="180dp"
+        android:background="@color/purple_200" />
+
+    <ImageView
+        android:id="@+id/idIVBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:tint="#F8DFD8" />
 
     <!--text view for displaying user name-->
     <TextView

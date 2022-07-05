@@ -21,7 +21,7 @@ public class ContactDetailActivity extends AppCompatActivity {
     private Integer contactId;
     private String contactName, contactNumb, contactUnivSid;
     private TextView contactTV, nameTV, univSidTV;
-    private ImageView contactIV;
+    private ImageView contactIV, backIV;
     private CardView callCV, messageCV;
 
     @Override
@@ -37,6 +37,7 @@ public class ContactDetailActivity extends AppCompatActivity {
         contactUnivSid = getIntent().getStringExtra("univSid");
 
         // initializing our views.
+        backIV = findViewById(R.id.idIVBack);
         contactIV = findViewById(R.id.idIVContact);
         nameTV = findViewById(R.id.idTVName);
         contactTV = findViewById(R.id.idTVPhone);
@@ -54,6 +55,13 @@ public class ContactDetailActivity extends AppCompatActivity {
         Drawable drawable = resources.getDrawable(imageID);
 
         contactIV.setImageDrawable(drawable);
+
+        backIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // on below line adding click listener for our calling image view.
         callCV.setOnClickListener(new View.OnClickListener() {
