@@ -250,20 +250,20 @@ public class Fragment_Third extends Fragment {
         curUniv = univAdapter.getItem(0);
         curSid = sidAdapter.getItem(0);
 
-        //TIMER
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.setTextView(view.findViewById(R.id.timeNow));
-        stopwatch.start();
-
-        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
-
-        stopButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopwatch.stop();
-                stopwatch.start();
-            }
-        });
+//        //TIMER
+//        Stopwatch stopwatch = new Stopwatch();
+//        stopwatch.setTextView(view.findViewById(R.id.timeNow));
+//        stopwatch.start();
+//
+//        Button stopButton = (Button) view.findViewById(R.id.stopButton) ;
+//
+//        stopButton.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                stopwatch.stop();
+//                stopwatch.start();
+//            }
+//        });
 
         return view;
     }

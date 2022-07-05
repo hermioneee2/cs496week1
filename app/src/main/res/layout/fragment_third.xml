@@ -26,59 +26,59 @@
         android:visibility="gone"
         />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/modal"
-        android:layout_width="300dp"
-        android:layout_height="500dp"
-        android:layout_gravity="center"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="20dp"
-        >
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/modal"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        app:cardElevation="20dp"-->
+<!--        >-->
 
-        <RelativeLayout
-            android:id="@+id/imageRV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_border"
-            >
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/imageRV"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/bg_border"-->
+<!--            >-->
 
-            <TextView
-                android:id="@+id/imageName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="FACE MATCH GAME"
-                android:textColor="@color/purple_500"
-                android:textSize="18sp"
-                android:fontFamily="@font/leferibasebold"
-                android:layout_marginTop="130dp"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/imageName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:text="FACE MATCH GAME"-->
+<!--                android:textColor="@color/purple_500"-->
+<!--                android:textSize="18sp"-->
+<!--                android:fontFamily="@font/leferibasebold"-->
+<!--                android:layout_marginTop="130dp"-->
+<!--                />-->
 
-            <TextView
-                android:id="@+id/imageUnivSid"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/imageName"
-                android:text="Match your friend's name with the corresponding information AS FAST AS YOU CAN. \n\nSee how fast you can go! \n\nAre you ready?"
-                android:textColor="#403D3D"
-                android:textSize="13sp"
-                android:gravity="center"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/leferibaseregular"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/imageUnivSid"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_below="@id/imageName"-->
+<!--                android:text="Match your friend's name with the corresponding information AS FAST AS YOU CAN. \n\nSee how fast you can go! \n\nAre you ready?"-->
+<!--                android:textColor="#403D3D"-->
+<!--                android:textSize="13sp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:fontFamily="@font/leferibaseregular"-->
+<!--                />-->
 
-            <Button
-                android:id="@+id/btnStart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="350dp"
-                android:layout_centerHorizontal="true"
-                android:text="START GAME" />
+<!--            <Button-->
+<!--                android:id="@+id/btnStart"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="350dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:text="START GAME" />-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-    </androidx.cardview.widget.CardView>
+<!--    </androidx.cardview.widget.CardView>-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/modalEnding"
@@ -87,7 +87,6 @@
         android:layout_gravity="center"
         app:cardCornerRadius="125dp"
         app:cardElevation="20dp"
-        android:visibility="gone"
         >
 
         <RelativeLayout
@@ -103,23 +102,62 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="YOUR RECORD"
-                android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
                 android:fontFamily="@font/leferibasebold"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageName2"
+                android:text="TIME"
+                android:textColor="#FAD0C3"
+                android:textSize="10sp"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="70dp"
+                android:fontFamily="@font/leferibasebold"
                 />
 
             <TextView
                 android:id="@+id/timeRecord"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/imageName2"
                 android:text="00:00.00"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/white"
                 android:textSize="23sp"
                 android:gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/leferibaseregular"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageName2"
+                android:text="SKIP"
+                android:textColor="#FAD0C3"
+                android:textSize="10sp"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="168dp"
+                android:fontFamily="@font/leferibasebold"
+                />
+
+            <TextView
+                android:id="@+id/numCorrect"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageName2"
+                android:text="0"
+                android:layout_marginLeft="155dp"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:layout_marginTop="35dp"
                 android:fontFamily="@font/leferibaseregular"
                 />
 
@@ -127,7 +165,7 @@
                 android:id="@+id/btnRestart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="14dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/timeRecord"
                 android:text="Try Again"
@@ -135,20 +173,6 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/leferibasebold"
                 android:backgroundTint="@color/white"
-                />
-
-            <TextView
-                android:id="@+id/numCorrect"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/btnRestart"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="23sp"
-                android:gravity="center"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/leferibaseregular"
                 />
 
         </RelativeLayout>
