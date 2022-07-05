@@ -13,7 +13,6 @@
     app:flipFrom="front"
     app:autoFlipBack="true"
     app:autoFlipBackTime="2000"
-
     >
 
 <!--    &lt;!&ndash; Back Layout Goes Here &ndash;&gt;-->

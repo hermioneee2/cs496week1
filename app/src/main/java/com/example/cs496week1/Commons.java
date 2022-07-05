@@ -53,14 +53,6 @@ public class Commons {
         public void setNumb(String numb) {
             this.numb = numb;
         }
-
-        public String getPSrc() {
-            return pSrc;
-        }
-
-        public void setPSrc(String pSrc) {
-            this.pSrc = pSrc;
-        }
     }
 }
 

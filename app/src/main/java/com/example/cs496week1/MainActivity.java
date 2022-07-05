@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                 person.setUniv(peopleObject.getString("univ"));
                 person.setSid(peopleObject.getString("sid"));
                 person.setNumb(peopleObject.getString("numb"));
-                person.setPSrc(peopleObject.getString("pSrc"));
 
                 Commons.peopleArrayList.add(person);
             }
