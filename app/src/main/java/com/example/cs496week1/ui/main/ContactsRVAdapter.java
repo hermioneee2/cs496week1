@@ -84,6 +84,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
         });
 
         String contactNumb = Commons.peopleArrayList.get(position).getNumb();
+        String contactName = Commons.peopleArrayList.get(position).getName();
 
         holder.callIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +98,7 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 // calling a method to send message
-                sendMessage(contactNumb);
+                sendMessage(contactNumb, contactName);
             }
         });
     }
@@ -123,11 +124,11 @@ class ContactRVAdapter extends RecyclerView.Adapter<ContactRVAdapter.ViewHolder>
         }
     }
 
-    private void sendMessage(String contactNumber) {
+    private void sendMessage(String contactNumber, String recipient) {
         // in this method we are calling an intent to send sms.
         // on below line we are passing our contact number.
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
-        intent.putExtra("sms_body", "Enter your message");
+        intent.putExtra("sms_body", "반가워요, " + recipient + "!");
         context.startActivity(intent);
     }
 

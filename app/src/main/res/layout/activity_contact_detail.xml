@@ -8,44 +8,46 @@
     tools:context=".ContactDetailActivity"
     >
 
-    <!--image view for contact-->
-    <RelativeLayout
-        android:id="@+id/idRLContact"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/purple_200"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/idCVContact"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="45dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
         >
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="20dp"
-            >
+        <ImageView
+            android:id="@+id/idIVContact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
 
-            <ImageView
-                android:id="@+id/idIVContact"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                />
+    </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
+    <!--image view for contact-->
+    <View
+        android:id="@+id/idVContactTop"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/purple_200"
+        />
 
     <!--text view for displaying user name-->
     <TextView
         android:id="@+id/idTVName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idRLContact"
-        android:background="@color/purple_200"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="170dp"
+        android:layout_below="@id/idVContactTop"
         android:padding="8dp"
         android:text="Name"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textColor="@color/purple_200"
+        android:textSize="22sp"
         android:fontFamily="@font/leferibasebold"
         />
 
@@ -54,12 +56,12 @@
         android:id="@+id/idCVNumb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVName"
-        android:layout_marginStart="4dp"
+        android:layout_below="@id/idCVContact"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="12dp"
         app:cardCornerRadius="4dp"
-        app:cardElevation="4dp"
+        app:cardElevation="0dp"
         >
 
         <RelativeLayout
@@ -69,12 +71,12 @@
 
             <!--image view for making a call -->
             <ImageView
-                android:id="@+id/idIVCall"
+                android:id="@+id/idIVNumb"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
                 android:padding="4dp"
-                android:src="@drawable/ic_baseline_phone_24"
+                android:src="@drawable/ic_baseline_contacts_24"
                 app:tint="@color/purple_700"
                 />
 
@@ -86,37 +88,32 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="8dp"
-                android:layout_toStartOf="@id/idIVMessage"
-                android:layout_toEndOf="@id/idIVCall"
-                android:text="Phone"
+                android:layout_toEndOf="@id/idIVNumb"
                 android:fontFamily="@font/leferibaseregular"
-                />
-
-            <!--image view for displaying message icon-->
-            <ImageView
-                android:id="@+id/idIVMessage"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="8dp"
-                android:padding="4dp"
-                android:src="@drawable/ic_baseline_message_24"
-                app:tint="@color/purple_700"
-                />
+                android:text="Phone" />
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
+    <View
+        android:id="@+id/idDivider"
+        android:layout_width="330dp"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:background="#F8EDEA"
+        android:layout_below="@id/idCVNumb"
+        />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/idCVUniv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idCVNumb"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
+        android:layout_below="@id/idDivider"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         app:cardCornerRadius="4dp"
-        app:cardElevation="4dp"
+        app:cardElevation="0dp"
         >
 
         <RelativeLayout
@@ -125,7 +122,7 @@
             >
 
             <ImageView
-                android:id="@+id/idIVSchool"
+                android:id="@+id/idIVUniv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
@@ -141,9 +138,101 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="8dp"
-                android:layout_toEndOf="@id/idIVSchool"
+                android:layout_toEndOf="@id/idIVUniv"
                 android:text="Univ Sid"
                 android:fontFamily="@font/leferibaseregular"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/idCVCall"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200">
+
+            <ImageView
+                android:id="@+id/idIVCall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_phone_24"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/idTVCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/idIVCall"
+                android:fontFamily="@font/leferibaseregular"
+                android:text="Call"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/idCVMessage"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            >
+
+            <ImageView
+                android:id="@+id/idIVMessage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_message_24"
+                app:tint="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/idTVMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/idIVMessage"
+                android:fontFamily="@font/leferibaseregular"
+                android:text="Message"
+                android:textColor="@color/white"
                 />
 
         </RelativeLayout>

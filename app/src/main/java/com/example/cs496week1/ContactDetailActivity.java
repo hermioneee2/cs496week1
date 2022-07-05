@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
 public class ContactDetailActivity extends AppCompatActivity {
@@ -20,7 +21,8 @@ public class ContactDetailActivity extends AppCompatActivity {
     private Integer contactId;
     private String contactName, contactNumb, contactUnivSid;
     private TextView contactTV, nameTV, univSidTV;
-    private ImageView contactIV, callIV, messageIV;
+    private ImageView contactIV;
+    private CardView callCV, messageCV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,10 @@ public class ContactDetailActivity extends AppCompatActivity {
         // initializing our views.
         contactIV = findViewById(R.id.idIVContact);
         nameTV = findViewById(R.id.idTVName);
-        callIV = findViewById(R.id.idIVCall);
         contactTV = findViewById(R.id.idTVPhone);
-        messageIV = findViewById(R.id.idIVMessage);
         univSidTV = findViewById(R.id.idTVUnivSid);
+        callCV = findViewById(R.id.idCVCall);
+        messageCV = findViewById(R.id.idCVMessage);
 
         nameTV.setText(contactName);
         contactTV.setText(contactNumb);
@@ -54,7 +56,7 @@ public class ContactDetailActivity extends AppCompatActivity {
         contactIV.setImageDrawable(drawable);
 
         // on below line adding click listener for our calling image view.
-        callIV.setOnClickListener(new View.OnClickListener() {
+        callCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // calling a method to make a call.
@@ -63,20 +65,20 @@ public class ContactDetailActivity extends AppCompatActivity {
         });
 
         // on below line adding on click listener for our message image view.
-        messageIV.setOnClickListener(new View.OnClickListener() {
+        messageCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // calling a method to send message
-                sendMessage(contactNumb);
+                sendMessage(contactNumb, contactName);
             }
         });
     }
 
-    private void sendMessage(String contactNumber) {
+    private void sendMessage(String contactNumber, String recipient) {
         // in this method we are calling an intent to send sms.
         // on below line we are passing our contact number.
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
-        intent.putExtra("sms_body", "Enter your message");
+        intent.putExtra("sms_body", "반가워요, " + recipient + "!");
         startActivity(intent);
     }
 

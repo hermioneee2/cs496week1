@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_message_message_24.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/round.xml" value="0.1685" />
         <entry key="app/src/main/res/font/customfont.xml" value="0.31203703703703706" />
-        <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18065134684244788" />
         <entry key="app/src/main/res/layout/card.xml" value="0.2930253623188406" />
         <entry key="app/src/main/res/layout/contacts_rv_item.xml" value="0.203125" />
