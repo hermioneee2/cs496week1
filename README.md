@@ -2,10 +2,9 @@
 
 ![GET2KNOWbg.png](README%20ed8a4bc7186244fbae5244c277fb03be/GET2KNOWbg.png)
 
-# GET2KNOW
 
 > 처음 만난 친구의 이름을 외우기 어렵다구요? GET2KNOW가 도와줄게요!
-> 
+ 
 
 *GET2KNOW는 여러가지 방식으로 얼굴 사진과 이름, 정보를 매치하여 새로 만난 친구의 이름을 더욱 빠르게 외울수 있도록 도와주는 앱입니다.*
 
