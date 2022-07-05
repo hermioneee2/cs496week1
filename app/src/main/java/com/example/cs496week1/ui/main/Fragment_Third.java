@@ -161,7 +161,7 @@ public class Fragment_Third extends Fragment {
 //                Log.v("Fragment_Third", (String) stopwatch.getElapsedTime());
 //                timeRecord.setText((int) stopwatch.getElapsedTime());
 //                stopwatch.setTextView(view.findViewById(R.id.timeRecord));
-                numCorrectTV.setText("" + numCorrect);
+                numCorrectTV.setText("" + (20-numCorrect));
                 numCorrect = 0;
             }
         });
