@@ -1,5 +1,5 @@
 # GET2KNOW
-
+---
 ![GET2KNOWbg.png](README%20ed8a4bc7186244fbae5244c277fb03be/GET2KNOWbg.png)
 
 # GET2KNOW
@@ -10,8 +10,6 @@
 *GET2KNOW는 여러가지 방식으로 얼굴 사진과 이름, 정보를 매치하여 새로 만난 친구의 이름을 더욱 빠르게 외울수 있도록 도와주는 앱입니다.*
 
 ## 기능 개요
-
----
 
 <p float="left">
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know.jpg" width="300" />
@@ -28,8 +26,6 @@
 
 ## **설치 링크**
 
----
-
 APK 다운로드 링크: 
 
 ### 권장 사용 환경 및 개발 환경
@@ -41,7 +37,6 @@ APK 다운로드 링크:
 
 ## TAB1 CONTACTS
 
----
 <p float="left">
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193534_Get2Know%201.jpg" width="400" />
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193543_Get2Know.jpg" width="400" />
@@ -60,7 +55,6 @@ APK 다운로드 링크:
 
 ## TAB2 GALLERY
 
----
 <p float="left">
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193550_Get2Know.jpg" width="400" />
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193556_Get2Know%201.jpg" width="400" />
@@ -84,8 +78,6 @@ APK 다운로드 링크:
 - 이 과정에서 ImageView의 이미지 각각에 mask를 씌우는 방식으로 구현할 수 있을지도 모르겠다는 아이디어가 떠올랐고, 유사한 기능을 하는 RoundedImageView를 찾아 성공적으로 적용할 수 있었습니다.
 
 ## TAB3 QUIZ
-
----
 
 <p float="left">
   <img src="/README%20ed8a4bc7186244fbae5244c277fb03be/Screenshot_20220705-193620_Get2Know.jpg" width="400" />
@@ -116,8 +108,6 @@ APK 다운로드 링크:
 
 ## GENERAL
 
----
-
 ### Fragment를 통한 탭 전환
 
 @Hermione Lee 
@@ -132,8 +122,6 @@ APK 다운로드 링크:
 
 ## **Authors**
 
----
-
 이혜림(카이스트 18): [https://github.com/hermioneee2](https://github.com/hermioneee2)
 
 박준현(고려대 20): [https://github.com/channelsucre](https://github.com/channelsucre) 
@@ -141,8 +129,6 @@ APK 다운로드 링크:
 ## THANKS TO
 
 Reference and Library
-
----
 
 ### TAB1
 
